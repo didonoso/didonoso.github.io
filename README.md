@@ -21,7 +21,6 @@ didonoso.github.io/
 │   ├── base.css           # CSS reset, variables, typography
 │   ├── layout.css         # Header, navigation, main, footer
 │   ├── components.css     # Reusable components (cards, buttons)
-│   └── utilities.css      # Helper classes (text-center, mt-md, etc.)
 ├── js/
 │   └── script.js          # JavaScript functionality (coming soon)
 └── assets/
@@ -35,7 +34,6 @@ This project uses a **modular CSS architecture** for better maintainability:
 - **base.css** - Foundation styles (reset, variables, typography)
 - **layout.css** - Structural layout (grid, flexbox, responsive design)
 - **components.css** - UI components (hero, project cards, buttons)
-- **utilities.css** - Utility classes for rapid development
 
 ## 📝 License
 
