@@ -14,14 +14,10 @@ Visit the live site: [didonoso.github.io](https://didonoso.github.io)
 
 ## 📂 Project Structure
 
-didonoso.github.io/
-├── index.html
-├── css/
-│ └── styles.css
-├── js/
-│ └── script.js
-└── assets/
-└── images/
+- `index.html` - Main page
+- `css/styles.css` - Stylesheets
+- `js/script.js` - JavaScript functionality
+- `assets/images/` - Image resources
 
 ## 📝 License
 
