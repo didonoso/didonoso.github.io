@@ -69,10 +69,6 @@ footer {
         --font-size-h1: 4rem;
         --font-size-h2: 2.5rem;
     }
-    
-    nav ul {
-        justify-content: flex-end;
-    }
 }
 
 /* Desktop */
