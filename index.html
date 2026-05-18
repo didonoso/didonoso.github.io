@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-    <!-- Navegación principal -->
+    <!-- Main Navigation -->
     <header>
         <nav>
             <ul>
@@ -25,21 +25,36 @@
         </nav>
     </header>
 
-    <!-- Contenido principal -->
+    <!-- Main Content -->
     <main>
-        <!-- Sección hero/intro -->
+        <!-- Hero/Intro Section -->
         <section id="hero">
-            <h1>Diego Donoso Vera</h1>
-            <p>Web Developer</p>
+            <!-- Background Image Carousel -->
+            <div class="hero-carousel">
+                <div class="hero-slide active" style="background-image: url('assets/images/hero1.avif')"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero2.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero3.jpg')"></div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1>Diego Donoso Vera</h1>
+                <p class="hero-subtitle">Full Stack Web Developer</p>
+                <p class="hero-description">Specialized in creating modern, scalable, and user-centered web applications</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#contact" class="btn-secondary">Let's Talk</a>
+                </div>
+            </div>
         </section>
 
-        <!-- Sobre mí -->
+        <!-- About Me -->
         <section id="about">
             <h2>About Me</h2>
             <p>Your introduction...</p>
         </section>
 
-        <!-- Experiencia -->
+        <!-- Experience -->
         <section id="experience">
             <h2>Experience</h2>
             <article class="experience">
@@ -48,7 +63,7 @@
             </article>
         </section>
 
-        <!-- Habilidades -->
+        <!-- Skills -->
         <section id="skills">
             <h2>Skills</h2>
             <ul>
@@ -58,7 +73,7 @@
             </ul>
         </section>
 
-        <!-- Proyectos -->
+        <!-- Projects -->
         <section id="projects">
             <h2>Projects</h2>
             <article class="project">
@@ -67,7 +82,7 @@
             </article>
         </section>
 
-        <!-- Educación -->
+        <!-- Education -->
         <section id="education">
             <h2>Education</h2>
             <article class="education">
@@ -76,7 +91,7 @@
             </article>
         </section>
 
-        <!-- Contacto -->
+        <!-- Contact -->
         <section id="contact">
             <h2>Contact</h2>
             <address>
@@ -85,9 +100,12 @@
         </section>
     </main>
 
-    <!-- Pie de página -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Diego Donoso Vera. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
