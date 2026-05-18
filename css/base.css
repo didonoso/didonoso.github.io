@@ -53,6 +53,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-background);
     line-height: 1.6;
+    overflow-x: hidden; /* Prevenir scroll horizontal */
 }
 
 /* Typography */

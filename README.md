@@ -14,10 +14,26 @@ Visit the live site: [didonoso.github.io](https://didonoso.github.io)
 
 ## 📂 Project Structure
 
-- `index.html` - Main page
-- `css/styles.css` - Stylesheets
-- `js/script.js` - JavaScript functionality
-- `assets/images/` - Image resources
+```
+didonoso.github.io/
+├── index.html              # Main HTML file with semantic structure
+├── css/
+│   ├── base.css           # CSS reset, variables, typography
+│   ├── layout.css         # Header, navigation, main, footer
+│   ├── components.css     # Reusable components (cards, buttons)
+├── js/
+│   └── script.js          # JavaScript functionality (coming soon)
+└── assets/
+    └── images/            # Image resources
+```
+
+## 🎨 CSS Architecture
+
+This project uses a **modular CSS architecture** for better maintainability:
+
+- **base.css** - Foundation styles (reset, variables, typography)
+- **layout.css** - Structural layout (grid, flexbox, responsive design)
+- **components.css** - UI components (hero, project cards, buttons)
 
 ## 📝 License
 
