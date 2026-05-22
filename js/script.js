@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ============================================
+    // NAVBAR SCROLL EFFECT
+    // ============================================
+    const header = document.querySelector('header');
+    
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    
+    // Initial check
+    handleScroll();
+    
+    // Listen to scroll events
+    window.addEventListener('scroll', handleScroll);
+
+    // ============================================
     // HAMBURGER MENU FUNCTIONALITY
     // ============================================
     const hamburger = document.querySelector('.hamburger');
