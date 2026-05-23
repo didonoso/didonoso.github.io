@@ -105,10 +105,16 @@ main {
     width: 100%;
 }
 
-/* Container for normal sections (not hero) */
-section:not(#hero) {
+/* Sections span full width for backgrounds */
+section {
+    width: 100%;
+}
+
+/* Content wrapper for sections - limits width of content */
+section:not(#hero) > * {
     max-width: var(--max-width);
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ============================================
@@ -194,7 +200,6 @@ section:not(#hero) {
     margin-bottom: var(--spacing-sm);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9),
                  0 0 15px rgba(0, 0, 0, 0.7);
-    color: #bfdbfe; /* Even lighter blue for better visibility */
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -209,7 +214,6 @@ section:not(#hero) {
     margin-left: auto;
     margin-right: auto;
     opacity: 1;
-    color: #f0f0f0; /* Brighter white */
 }
 
 /* Hero buttons */
@@ -247,15 +251,27 @@ section:not(#hero) {
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: var(--color-secondary);
     color: white;
-    border: 2px solid white;
+    box-shadow: 0 4px 14px rgba(100, 116, 139, 0.4);
 }
 
 .btn-secondary:hover {
+    background-color: #475569;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(100, 116, 139, 0.6);
+}
+
+/* Hero specific button styles */
+#hero .btn-secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    box-shadow: none;
+}
+
+#hero .btn-secondary:hover {
     background-color: white;
     color: var(--color-text);
-    transform: translateY(-2px);
 }
 
 /* ============================================
@@ -272,12 +288,99 @@ section h2 {
     text-align: center;
 }
 
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+#about {
+    background-color: var(--color-background-alt);
+}
+
+/* ============================================
+   ALTERNATING SECTION BACKGROUNDS
+   ============================================ */
+
+/* Gray background sections */
+#about,
+#skills,
+#contact {
+    background-color: var(--color-background-alt);
+}
+
+/* White background sections */
+#experience,
+#projects,
+#education {
+    background-color: var(--color-background);
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.about-image {
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--color-primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.3);
+}
+
+.about-content {
+    flex: 1;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+.about-intro {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+.about-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-light);
+}
+
+.about-buttons {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* Footer */
 footer {
     text-align: center;
     padding: var(--spacing-md);
-    background-color: var(--color-background-alt);
-    margin-top: var(--spacing-xl);
+    background-color: var(--color-text);
+    color: white;
     border-top: 1px solid var(--color-secondary);
 }
 
@@ -424,6 +527,30 @@ footer {
     
     .hero-content h1 {
         font-size: 4.5rem;
+    }
+    
+    /* About section - 2 column layout */
+    .about-container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--spacing-xl);
+    }
+    
+    .avatar {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .about-content {
+        text-align: left;
+    }
+    
+    .about-content h2 {
+        text-align: left;
+    }
+    
+    .about-buttons {
+        justify-content: flex-start;
     }
 }
 
