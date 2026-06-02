@@ -565,6 +565,76 @@ section h2 {
     opacity: 1;
 }
 
+/* ============================================
+   SKILLS SECTION
+   ============================================ */
+
+.skills-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.skill-category {
+    background: var(--color-background);
+    border: 0.0625rem solid rgba(37, 99, 235, 0.15);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: all var(--transition-base);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.skill-category:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.75rem 2rem rgba(37, 99, 235, 0.15);
+    border-color: var(--color-primary);
+}
+
+.category-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-title::before {
+    content: '▸';
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: rgba(37, 99, 235, 0.12);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border: 0.0625rem solid rgba(37, 99, 235, 0.2);
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.3);
+    border-color: var(--color-primary);
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -716,6 +786,25 @@ footer {
     .company-logo {
         width: 2rem;
         height: 2rem;
+    }
+    
+    /* Skills mobile adjustments */
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .skill-category {
+        padding: var(--spacing-sm);
+    }
+    
+    .category-title {
+        font-size: 1rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.8125rem;
+        padding: 0.4375rem 0.875rem;
     }
 }
 
