@@ -22,14 +22,24 @@ didonoso.github.io/
 │   ├── layout.css         # Header, navigation, main, footer
 │   ├── components.css     # Reusable components (cards, buttons)
 ├── js/
-│   └── script.js          # JavaScript functionality (coming soon)
+│   └── script.js          # JavaScript functionality
 └── assets/
+    ├── cv/                # CV/Resume files
+    │   └── Diego_Donoso_CV.pdf
     └── images/            # Image resources
+        ├── avatar.jpg
+        ├── favicon.png
+        ├── hero1.avif
+        ├── hero2.jpg
+        ├── hero3.jpg
+        ├── indra-logo.jpg
+        ├── deliryum-logo.jpg
+        └── project-1.jpg
 ```
 
 ## 🎨 CSS Architecture
 
-This project uses a **modular CSS architecture** for better maintainability:
+This project uses a **modular CSS architecture** for better maintainability and scalability:
 
 - **base.css** - Foundation styles (reset, variables, typography)
 - **layout.css** - Structural layout (grid, flexbox, responsive design)
