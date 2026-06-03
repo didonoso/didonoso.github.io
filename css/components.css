@@ -22,28 +22,160 @@
     color: #ffffff; /* White for dark carousel background */
 }
 
-/* Project cards */
-.project {
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-md);
+/* ============================================
+   PROJECT CARDS
+   ============================================ */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--color-background);
+    border: 0.0625rem solid rgba(37, 99, 235, 0.15);
     border-radius: var(--border-radius);
-    background-color: var(--color-background-alt);
-    border: 1px solid var(--color-secondary);
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
-.project:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.project-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2.5rem rgba(37, 99, 235, 0.2);
+    border-color: var(--color-primary);
 }
 
-.project h3 {
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 12.5rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(100, 116, 139, 0.1) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.project p {
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: inherit;
+    transition: transform var(--transition-base);
+}
+
+.project-card:hover .project-image::before {
+    transform: scale(1.05);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(100, 116, 139, 0.05) 100%);
+}
+
+.placeholder-content {
+    text-align: center;
     color: var(--color-text-light);
+}
+
+.placeholder-content svg {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.5;
+}
+
+.placeholder-content p {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.project-content {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.project-description {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+    flex: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 0.0625rem solid rgba(37, 99, 235, 0.1);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border: 0.0625rem solid transparent;
+}
+
+.project-link:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.3);
+}
+
+.project-link svg {
+    flex-shrink: 0;
 }
 
 /* Buttons */
@@ -380,5 +512,35 @@
     .skill-tag {
         font-size: 0.8125rem;
         padding: 0.4375rem 0.875rem;
+    }
+    
+    /* Project cards adjustments */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .project-image {
+        height: 10rem;
+    }
+    
+    .project-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .project-title {
+        font-size: 1.125rem;
+    }
+    
+    .project-description {
+        font-size: 0.875rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .project-link {
+        justify-content: center;
     }
 }
