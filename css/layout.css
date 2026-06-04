@@ -303,14 +303,14 @@ section h2 {
 /* Gray background sections */
 #about,
 #skills,
-#contact {
+#education {
     background-color: var(--color-background-alt);
 }
 
 /* White background sections */
 #experience,
 #projects,
-#education {
+#contact {
     background-color: var(--color-background);
 }
 
