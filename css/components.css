@@ -22,28 +22,160 @@
     color: #ffffff; /* White for dark carousel background */
 }
 
-/* Project cards */
-.project {
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-md);
+/* ============================================
+   PROJECT CARDS
+   ============================================ */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--color-background);
+    border: 0.0625rem solid rgba(37, 99, 235, 0.15);
     border-radius: var(--border-radius);
-    background-color: var(--color-background-alt);
-    border: 1px solid var(--color-secondary);
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
-.project:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.project-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2.5rem rgba(37, 99, 235, 0.2);
+    border-color: var(--color-primary);
 }
 
-.project h3 {
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 12.5rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(100, 116, 139, 0.1) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.project p {
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: inherit;
+    transition: transform var(--transition-base);
+}
+
+.project-card:hover .project-image::before {
+    transform: scale(1.05);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(100, 116, 139, 0.05) 100%);
+}
+
+.placeholder-content {
+    text-align: center;
     color: var(--color-text-light);
+}
+
+.placeholder-content svg {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.5;
+}
+
+.placeholder-content p {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.project-content {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.project-description {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+    flex: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 0.0625rem solid rgba(37, 99, 235, 0.1);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border: 0.0625rem solid transparent;
+}
+
+.project-link:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.3);
+}
+
+.project-link svg {
+    flex-shrink: 0;
 }
 
 /* Buttons */
@@ -102,4 +234,491 @@
 #contact a:hover {
     background-color: var(--color-primary);
     color: white;
+}
+
+/* ============================================
+   TIMELINE COMPONENTS (Experience Section)
+   ============================================ */
+
+.timeline-dot {
+    position: absolute;
+    left: -0.625rem;
+    top: 0.5rem;
+    width: 1.375rem;
+    height: 1.375rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 0.25rem solid var(--color-background);
+    box-shadow: 0 0 0 0.25rem var(--color-primary),
+                0 0.25rem 0.5rem rgba(37, 99, 235, 0.3);
+    transition: all var(--transition-base);
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 0.25rem var(--color-primary),
+                0 0.5rem 1rem rgba(37, 99, 235, 0.5);
+}
+
+.timeline-date {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+}
+
+.timeline-card {
+    background: var(--color-background);
+    border: 0.0625rem solid rgba(37, 99, 235, 0.15);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: all var(--transition-base);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.timeline-card:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.75rem 2rem rgba(37, 99, 235, 0.15);
+    border-color: var(--color-primary);
+}
+
+.timeline-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.timeline-card .role {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.timeline-card ul {
+    list-style: none;
+    padding-left: 0;
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+.timeline-card ul li {
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.timeline-card ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.timeline-card ul li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-card .stack {
+    margin-top: var(--spacing-sm);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Badge component - used in timeline and potentially elsewhere */
+.badge {
+    display: inline-block;
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--color-primary);
+    padding: 0.375rem 0.875rem;
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border: 0.0625rem solid transparent;
+}
+
+.badge:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.3);
+}
+
+/* Company component */
+.company {
+    margin: 0;
+}
+
+.company a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    width: fit-content;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.company a:hover {
+    color: var(--color-primary);
+}
+
+.company-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    background: white;
+    padding: 0.25rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-fast);
+}
+
+.company a:hover .company-logo {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.2);
+}
+
+.external-icon {
+    opacity: 0.5;
+    transition: all var(--transition-fast);
+}
+
+.company a:hover .external-icon {
+    transform: translate(0.125rem, -0.125rem);
+    opacity: 1;
+}
+
+/* ============================================
+   SKILLS COMPONENTS
+   ============================================ */
+
+.skill-category {
+    background: var(--color-background);
+    border: 0.0625rem solid rgba(37, 99, 235, 0.15);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: all var(--transition-base);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.skill-category:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.75rem 2rem rgba(37, 99, 235, 0.15);
+    border-color: var(--color-primary);
+}
+
+.category-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-title::before {
+    content: '▸';
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: rgba(37, 99, 235, 0.12);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border: 0.0625rem solid rgba(37, 99, 235, 0.2);
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.3);
+    border-color: var(--color-primary);
+}
+
+/* ============================================
+   EDUCATION COMPONENTS
+   ============================================ */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background: var(--color-background);
+    border: 0.0625rem solid rgba(37, 99, 235, 0.15);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.education-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2.5rem rgba(37, 99, 235, 0.2);
+    border-color: var(--color-primary);
+}
+
+.education-image {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    background: var(--color-background-alt);
+}
+
+.education-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.education-card:hover .education-image img {
+    transform: scale(1.05);
+}
+
+.education-content {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    gap: var(--spacing-sm);
+}
+
+.education-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.education-institution {
+    font-size: 0.9375rem;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.education-year {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0.25rem 0.75rem;
+    background: rgba(37, 99, 235, 0.08);
+    border-radius: calc(var(--border-radius) / 2);
+}
+
+.education-description {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.education-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.education-badge {
+    display: inline-block;
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--color-primary);
+    padding: 0.375rem 0.875rem;
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    border: 0.0625rem solid rgba(37, 99, 235, 0.2);
+    transition: all var(--transition-fast);
+    cursor: default;
+}
+
+.education-badge:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.3);
+    border-color: var(--color-primary);
+}
+
+.education-actions {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 0.0625rem solid rgba(37, 99, 235, 0.1);
+}
+
+.education-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.3);
+}
+
+.education-download-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.375rem 1rem rgba(37, 99, 235, 0.5);
+}
+
+.education-download-btn svg {
+    flex-shrink: 0;
+}
+
+/* ============================================
+   RESPONSIVE COMPONENTS
+   ============================================ */
+
+/* Mobile adjustments for components */
+@media (max-width: 767px) {
+    /* Timeline component adjustments */
+    .timeline-dot {
+        left: -0.5rem;
+        width: 1rem;
+        height: 1rem;
+        border-width: 0.1875rem;
+    }
+    
+    .timeline-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .timeline-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .timeline-card .role {
+        font-size: 0.9375rem;
+    }
+    
+    .timeline-card ul li {
+        font-size: 0.875rem;
+        padding-left: 1.25rem;
+    }
+    
+    .badge {
+        font-size: 0.75rem;
+        padding: 0.3125rem 0.625rem;
+    }
+    
+    .company-logo {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    /* Skills component adjustments */
+    .skill-category {
+        padding: var(--spacing-sm);
+    }
+    
+    .category-title {
+        font-size: 1rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.8125rem;
+        padding: 0.4375rem 0.875rem;
+    }
+    
+    /* Project cards adjustments */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .project-image {
+        height: 10rem;
+    }
+    
+    .project-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .project-title {
+        font-size: 1.125rem;
+    }
+    
+    .project-description {
+        font-size: 0.875rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .project-link {
+        justify-content: center;
+    }
+    
+    /* Education component adjustments */
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .education-image {
+        height: 12rem;
+    }
+    
+    .education-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .education-header {
+        flex-direction: column;
+    }
+    
+    .education-title {
+        font-size: 1.125rem;
+    }
+    
+    .education-year {
+        align-self: flex-start;
+    }
 }

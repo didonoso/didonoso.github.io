@@ -303,14 +303,14 @@ section h2 {
 /* Gray background sections */
 #about,
 #skills,
-#contact {
+#education {
     background-color: var(--color-background-alt);
 }
 
 /* White background sections */
 #experience,
 #projects,
-#education {
+#contact {
     background-color: var(--color-background);
 }
 
@@ -373,6 +373,53 @@ section h2 {
     gap: var(--spacing-sm);
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* ============================================
+   EXPERIENCE SECTION - TIMELINE STRUCTURE
+   ============================================ */
+
+.timeline {
+    position: relative;
+    margin-left: 1.25rem;
+    padding-top: var(--spacing-sm);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.125rem;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        var(--color-primary), 
+        var(--color-secondary)
+    );
+    border-radius: 0.125rem;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 3.125rem;
+    margin-bottom: 3.75rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   SKILLS SECTION - STRUCTURE
+   ============================================ */
+
+.skills-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
 }
 
 /* Footer */
@@ -482,6 +529,22 @@ footer {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    /* Timeline structure adjustments */
+    .timeline {
+        margin-left: 0.75rem;
+    }
+    
+    .timeline-item {
+        padding-left: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    /* Skills structure adjustments */
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
     }
 }
 
