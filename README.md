@@ -24,6 +24,9 @@ didonoso.github.io/
 ├── js/
 │   └── script.js          # JavaScript functionality
 └── assets/
+    ├── certifications/    # Academic and professional certificates
+    │   ├── CISCO_Python_Certificate.pdf
+    │   └── DUOC_Certificate.pdf
     ├── cv/                # CV/Resume files
     │   └── Diego_Donoso_CV.pdf
     └── images/            # Image resources
