@@ -422,15 +422,6 @@ section h2 {
     gap: var(--spacing-md);
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: var(--spacing-md);
-    background-color: var(--color-text);
-    color: white;
-    border-top: 1px solid var(--color-secondary);
-}
-
 /* ============================================
    RESPONSIVE LAYOUT
    ============================================ */
