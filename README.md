@@ -23,6 +23,9 @@ didonoso.github.io/
 │   ├── components.css     # Reusable components (cards, buttons)
 ├── js/
 │   └── script.js          # JavaScript functionality
+├── locales/              # i18n locale JSON files (ES/EN)
+│   ├── en.json
+│   └── es.json
 └── assets/
     ├── certifications/    # Academic and professional certificates
     │   ├── CISCO_Python_Certificate.pdf
