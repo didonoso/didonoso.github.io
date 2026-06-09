@@ -28,15 +28,17 @@
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </button>
+            <!-- Language Toggle -->
+            <button id="lang-toggle" aria-label="Toggle language" aria-pressed="false" class="lang-toggle">EN</button>
             
             <!-- Navigation Menu -->
             <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a data-i18n="nav.about" href="#about">About</a></li>
+                <li><a data-i18n="nav.experience" href="#experience">Experience</a></li>
+                <li><a data-i18n="nav.skills" href="#skills">Skills</a></li>
+                <li><a data-i18n="nav.projects" href="#projects">Projects</a></li>
+                <li><a data-i18n="nav.education" href="#education">Education</a></li>
+                <li><a data-i18n="nav.contact" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -55,11 +57,11 @@
             <!-- Hero Content -->
             <div class="hero-content">
                 <h1>Diego Donoso Vera</h1>
-                <p class="hero-subtitle">Full Stack Web Developer</p>
-                <p class="hero-description">Specialized in creating modern, scalable, and user-centered web applications</p>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Full Stack Web Developer</p>
+                <p class="hero-description" data-i18n="hero.description">Specialized in creating modern, scalable, and user-centered web applications</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn-primary">View Projects</a>
-                    <a href="#contact" class="btn-secondary">Let's Talk</a>
+                    <a href="#projects" class="btn-primary" data-i18n="hero.cta_projects">View Projects</a>
+                    <a href="#contact" class="btn-secondary" data-i18n="hero.cta_contact">Let's Talk</a>
                 </div>
             </div>
         </section>
@@ -71,21 +73,10 @@
                     <img src="assets/images/avatar.jpg" alt="Diego Donoso Vera - Full Stack Developer" class="avatar">
                 </div>
                 <div class="about-content">
-                    <h2>About Me</h2>
-                    <p class="about-intro">
-                        Hi! I'm Diego, a passionate <strong>Senior Full Stack Developer</strong> currently working at <strong>INDRA</strong>, 
-                        where I design and build scalable web solutions that solve real-world problems.
-                    </p>
-                    <p class="about-description">
-                        With over 3 years of professional experience, I specialize in creating modern, performant web applications 
-                        using technologies like <strong>React</strong>, <strong>Node.js</strong>, and <strong>Angular</strong>. 
-                        My journey has taken me from developing AI-powered platforms at <strong>Deliryum.AI</strong> to architecting 
-                        enterprise-level solutions at INDRA.
-                    </p>
-                    <p class="about-description">
-                        I'm driven by clean code, user-centric design, and continuous learning. When I'm not coding, 
-                        you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.
-                    </p>
+                    <h2 data-i18n="about.title">About Me</h2>
+                    <p class="about-intro" data-i18n-html="about.intro">Hi! I'm Diego, a passionate <strong>Senior Full Stack Developer</strong> currently working at <strong>INDRA</strong>, where I design and build scalable web solutions that solve real-world problems.</p>
+                    <p class="about-description" data-i18n-html="about.description1">With over 3 years of professional experience, I specialize in creating modern, performant web applications using technologies like <strong>React</strong>, <strong>Node.js</strong>, and <strong>Angular</strong>. My journey has taken me from developing AI-powered platforms at <strong>Deliryum.AI</strong> to architecting enterprise-level solutions at INDRA.</p>
+                    <p class="about-description" data-i18n-html="about.description2">I'm driven by clean code, user-centric design, and continuous learning. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
                     <div class="about-buttons">
                         <a href="assets/cv/Diego_Donoso_CV.pdf" download class="btn-primary btn-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -108,12 +99,12 @@
 
         <!-- Experience -->
         <section id="experience">
-            <h2>Experience</h2>
+            <h2 data-i18n="experience.title">Experience</h2>
             <div class="timeline">
                 <!-- INDRA -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Aug 2023 — Present</div>
+                    <div class="timeline-date" data-i18n="experience.indra.dates">Aug 2023 — Present</div>
                     <div class="timeline-card">
                         <h3 class="company">
                             <a href="https://www.linkedin.com/company/indragroupglobal/"
@@ -136,14 +127,14 @@
                                 </svg>
                             </a>
                         </h3>
-                        <div class="role">Full Stack Engineer</div>
+                        <div class="role" data-i18n="experience.indra.role">Full Stack Engineer</div>
                         <div class="description">
                             <ul>
-                                <li>Developed and maintained enterprise platforms for ENEL, Codelco, and Chile's National Electrical Coordinator (CEN).</li>
-                                <li>Participated in critical energy management and industrial monitoring systems used in large-scale operational environments.</li>
-                                <li>Led database migration processes from Oracle to PostgreSQL and modernized legacy APIs using ASP.NET Core 9.</li>
-                                <li>Implemented Clean Architecture, CQRS, Mediator pattern, and internal automation solutions to improve maintainability and scalability.</li>
-                                <li>Collaborated in full-stack development using Angular and PHP for enterprise-level applications.</li>
+                                <li data-i18n="experience.indra.li1">Developed and maintained enterprise platforms for ENEL, Codelco, and Chile's National Electrical Coordinator (CEN).</li>
+                                <li data-i18n="experience.indra.li2">Participated in critical energy management and industrial monitoring systems used in large-scale operational environments.</li>
+                                <li data-i18n="experience.indra.li3">Led database migration processes from Oracle to PostgreSQL and modernized legacy APIs using ASP.NET Core 9.</li>
+                                <li data-i18n="experience.indra.li4">Implemented Clean Architecture, CQRS, Mediator pattern, and internal automation solutions to improve maintainability and scalability.</li>
+                                <li data-i18n="experience.indra.li5">Collaborated in full-stack development using Angular and PHP for enterprise-level applications.</li>
                             </ul>
                         </div>
                         <div class="stack">
@@ -160,7 +151,7 @@
                 <!-- DELIRYUM -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Oct 2021 — Aug 2023</div>
+                    <div class="timeline-date" data-i18n="experience.deliryum.dates">Oct 2021 — Aug 2023</div>
                     <div class="timeline-card">
                         <h3 class="company">
                             <a href="https://www.linkedin.com/company/deliryum-ai/"
@@ -183,16 +174,16 @@
                                 </svg>
                             </a>
                         </h3>
-                        <div class="role">Software Developer</div>
+                        <div class="role" data-i18n="experience.deliryum.role">Software Developer</div>
                         <div class="description">
                             <ul>
-                                <li>Developed AI-powered video analytics solutions using YOLO and PyTorch.</li>
-                                <li>Built scalable APIs with Flask, FastAPI, and Django.</li>
-                                <li>Created modern frontend applications with React JS consuming REST APIs.</li>
-                                <li>Participated in technical leadership and development team coordination.</li>
-                                <li>Designed web interfaces and developed REST APIs.</li>
-                                <li>Integrated databases and automated internal processes.</li>
-                                <li>Contributed to computer vision and image analysis projects.</li>
+                                <li data-i18n="experience.deliryum.li1">Developed AI-powered video analytics solutions using YOLO and PyTorch.</li>
+                                <li data-i18n="experience.deliryum.li2">Built scalable APIs with Flask, FastAPI, and Django.</li>
+                                <li data-i18n="experience.deliryum.li3">Created modern frontend applications with React JS consuming REST APIs.</li>
+                                <li data-i18n="experience.deliryum.li4">Participated in technical leadership and development team coordination.</li>
+                                <li data-i18n="experience.deliryum.li5">Designed web interfaces and developed REST APIs.</li>
+                                <li data-i18n="experience.deliryum.li6">Integrated databases and automated internal processes.</li>
+                                <li data-i18n="experience.deliryum.li7">Contributed to computer vision and image analysis projects.</li>
                             </ul>
                         </div>
                         <div class="stack">
@@ -219,11 +210,11 @@
 
         <!-- Skills -->
         <section id="skills">
-            <h2>Technical Skills</h2>
+            <h2 data-i18n="skills.title">Technical Skills</h2>
             <div class="skills-container">
                 <!-- Frontend -->
                 <div class="skill-category">
-                    <h3 class="category-title">Frontend Development</h3>
+                    <h3 class="category-title" data-i18n="skills.frontend.title">Frontend Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">React</span>
                         <span class="skill-tag">Angular</span>
@@ -237,7 +228,7 @@
 
                 <!-- Backend -->
                 <div class="skill-category">
-                    <h3 class="category-title">Backend Development</h3>
+                    <h3 class="category-title" data-i18n="skills.backend.title">Backend Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">ASP.NET Core</span>
                         <span class="skill-tag">Node.js</span>
@@ -252,7 +243,7 @@
 
                 <!-- Databases -->
                 <div class="skill-category">
-                    <h3 class="category-title">Databases</h3>
+                    <h3 class="category-title" data-i18n="skills.databases.title">Databases</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">Oracle</span>
@@ -263,7 +254,7 @@
 
                 <!-- AI/ML -->
                 <div class="skill-category">
-                    <h3 class="category-title">AI & Machine Learning</h3>
+                    <h3 class="category-title" data-i18n="skills.ai.title">AI & Machine Learning</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">PyTorch</span>
                         <span class="skill-tag">TensorFlow</span>
@@ -275,7 +266,7 @@
 
                 <!-- Architecture & Patterns -->
                 <div class="skill-category">
-                    <h3 class="category-title">Architecture & Patterns</h3>
+                    <h3 class="category-title" data-i18n="skills.architecture.title">Architecture & Patterns</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Clean Architecture</span>
                         <span class="skill-tag">CQRS</span>
@@ -287,7 +278,7 @@
 
                 <!-- Tools & DevOps -->
                 <div class="skill-category">
-                    <h3 class="category-title">Tools & DevOps</h3>
+                    <h3 class="category-title" data-i18n="skills.tools.title">Tools & DevOps</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">Docker</span>
@@ -301,15 +292,15 @@
 
         <!-- Projects -->
         <section id="projects">
-            <h2>Projects</h2>
+            <h2 data-i18n="projects.title">Projects</h2>
             <div class="projects-grid">
                 <!-- Portfolio Website -->
                 <article class="project-card">
                     <div class="project-image" style="background-image: url('assets/images/project-1.png');">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Personal Portfolio Website</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.portfolio.title">Personal Portfolio Website</h3>
+                        <p class="project-description" data-i18n="projects.portfolio.description">
                             Modern, responsive portfolio website showcasing my professional experience, technical skills, and projects. 
                             Built with semantic HTML5, modular CSS architecture, and vanilla JavaScript for optimal performance.
                         </p>
@@ -320,7 +311,7 @@
                             <span class="badge">Responsive Design</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://didonoso.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <a href="https://didonoso.github.io" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.cta_live">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
@@ -328,7 +319,7 @@
                                 </svg>
                                 Live Demo
                             </a>
-                            <a href="https://github.com/didonoso/didonoso.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <a href="https://github.com/didonoso/didonoso.github.io" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.cta_code">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
@@ -344,12 +335,12 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 2v20M2 12h20"/>
                             </svg>
-                            <p>More projects coming soon...</p>
+                            <p data-i18n="projects.more_coming">More projects coming soon...</p>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Coming Soon</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.coming.title">Coming Soon</h3>
+                        <p class="project-description" data-i18n="projects.coming.description">
                             I'm currently working on exciting new projects. Check back soon to see more of my work!
                         </p>
                     </div>
@@ -359,7 +350,7 @@
 
         <!-- Education -->
         <section id="education">
-            <h2>Education & Certifications</h2>
+            <h2 data-i18n="education.title">Education & Certifications</h2>
             <div class="education-grid">
                 <!-- DUOC UC Degree -->
                 <article class="education-card">
@@ -369,12 +360,12 @@
                     <div class="education-content">
                         <div class="education-header">
                             <div>
-                                <h3 class="education-title">Technical Analyst Programmer</h3>
-                                <p class="education-institution">DUOC UC Professional Institute</p>
+                                <h3 class="education-title" data-i18n="education.duoc.title">Technical Analyst Programmer</h3>
+                                <p class="education-institution" data-i18n="education.duoc.institution">DUOC UC Professional Institute</p>
                             </div>
-                            <span class="education-year">2019 - 2021</span>
+                            <span class="education-year" data-i18n="education.duoc.year">2019 - 2021</span>
                         </div>
-                        <p class="education-description">
+                        <p class="education-description" data-i18n-html="education.duoc.description">
                             Higher technical degree focused on software development, database management, and system analysis. 
                             Graduated with honors (Two Distinctions).
                         </p>
@@ -390,7 +381,7 @@
                                     <polyline points="7 10 12 15 17 10"></polyline>
                                     <line x1="12" y1="15" x2="12" y2="3"></line>
                                 </svg>
-                                Download Certificate
+                                <span data-i18n="education.download">Download Certificate</span>
                             </a>
                         </div>
                     </div>
@@ -404,12 +395,12 @@
                     <div class="education-content">
                         <div class="education-header">
                             <div>
-                                <h3 class="education-title">Python Fundamentals 1</h3>
-                                <p class="education-institution">CISCO Networking Academy</p>
+                                <h3 class="education-title" data-i18n="education.cisco.title">Python Fundamentals 1</h3>
+                                <p class="education-institution" data-i18n="education.cisco.institution">CISCO Networking Academy</p>
                             </div>
-                            <span class="education-year">03 Jun 2026</span>
+                            <span class="education-year" data-i18n="education.cisco.year">03 Jun 2026</span>
                         </div>
-                        <p class="education-description">
+                        <p class="education-description" data-i18n-html="education.cisco.description">
                             Comprehensive certification covering Python programming fundamentals, data structures, 
                             control flow, and object-oriented programming principles.
                         </p>
@@ -425,7 +416,7 @@
                                     <polyline points="7 10 12 15 17 10"></polyline>
                                     <line x1="12" y1="15" x2="12" y2="3"></line>
                                 </svg>
-                                Download Certificate
+                                <span data-i18n="education.download">Download Certificate</span>
                             </a>
                         </div>
                     </div>
@@ -435,8 +426,8 @@
 
         <!-- Contact -->
         <section id="contact">
-            <h2>Get In Touch</h2>
-            <p class="section-intro">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+            <h2 data-i18n="contact.title">Get In Touch</h2>
+            <p class="section-intro" data-i18n="contact.intro">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
             
             <div class="contact-container">
                 <!-- Contact Info -->
@@ -449,7 +440,7 @@
                             </svg>
                         </div>
                         <div class="contact-details">
-                            <h3>Email</h3>
+                            <h3 data-i18n="contact.email.title">Email</h3>
                             <a href="mailto:diegoignaciodonosovera@gmail.com">diegoignaciodonosovera@gmail.com</a>
                         </div>
                     </div>
@@ -462,7 +453,7 @@
                             </svg>
                         </div>
                         <div class="contact-details">
-                            <h3>Location</h3>
+                            <h3 data-i18n="contact.location.title">Location</h3>
                             <p style="display: flex; align-items: center; gap: 0.5rem;">
                                 <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; border: 1px solid rgba(0,0,0,0.1);">
                                     <!-- Bandera de Chile -->
@@ -471,7 +462,7 @@
                                     <rect width="7" height="7" fill="#0039A6"/>
                                     <path d="M3.5 1.2 l0.4 1.3 h1.4 l-1.1 0.8 0.4 1.3 -1.1-0.8 -1.1 0.8 0.4-1.3 -1.1-0.8 h1.4 z" fill="white"/>
                                 </svg>
-                                Santiago, Chile
+                                <span data-i18n="contact.location.value">Santiago, Chile</span>
                             </p>
                         </div>
                     </div>
@@ -483,7 +474,7 @@
                             </svg>
                         </div>
                         <div class="contact-details">
-                            <h3>Social</h3>
+                            <h3 data-i18n="contact.social.title">Social</h3>
                             <div class="contact-social">
                                 <a href="https://github.com/didonoso" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
                                 <span>•</span>
@@ -497,23 +488,23 @@
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <label for="name">Name <span class="required">*</span></label>
-                            <input type="text" id="name" name="from_name" required placeholder="Your full name">
+                            <label for="name"><span data-i18n="contact.form.name.label">Name</span> <span class="required">*</span></label>
+                            <input type="text" id="name" name="from_name" required data-i18n-placeholder="contact.form.name.placeholder" placeholder="Your full name">
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="from_email" required placeholder="your.email@example.com">
+                            <label for="email"><span data-i18n="contact.form.email.label">Email</span> <span class="required">*</span></label>
+                            <input type="email" id="email" name="from_email" required data-i18n-placeholder="contact.form.email.placeholder" placeholder="your.email@example.com">
                         </div>
 
                         <div class="form-group">
-                            <label for="subject">Subject <span class="required">*</span></label>
-                            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                            <label for="subject"><span data-i18n="contact.form.subject.label">Subject</span> <span class="required">*</span></label>
+                            <input type="text" id="subject" name="subject" required data-i18n-placeholder="contact.form.subject.placeholder" placeholder="What's this about?">
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Message <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or inquiry..."></textarea>
+                            <label for="message"><span data-i18n="contact.form.message.label">Message</span> <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="6" required data-i18n-placeholder="contact.form.message.placeholder" placeholder="Tell me about your project or inquiry..."></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary btn-submit" id="submit-btn">
@@ -521,7 +512,7 @@
                                 <line x1="22" y1="2" x2="11" y2="13"></line>
                                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                             </svg>
-                            <span class="btn-text">Send Message</span>
+                            <span class="btn-text" data-i18n="contact.form.send">Send Message</span>
                         </button>
                         
                         <!-- Status messages -->
@@ -534,52 +525,52 @@
 
     <!-- Footer -->
     <footer class="site-footer" role="contentinfo">
-        <div class="footer-container">
-            <div class="footer-col footer-about">
-                <div class="footer-logo">
-                    <h3>Diego Donoso Vera</h3>
+            <div class="footer-container">
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">
+                        <h3>Diego Donoso Vera</h3>
+                    </div>
+                    <p class="footer-desc" data-i18n="footer.about.desc">Senior Full Stack Developer — building scalable web applications with clarity, performance and design.</p>
                 </div>
-                <p class="footer-desc">Senior Full Stack Developer — building scalable web applications with clarity, performance and design.</p>
-            </div>
 
-            <div class="footer-col footer-links">
-                <h4>Quick Links</h4>
-                <nav aria-label="Footer Navigation">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
-
-            <div class="footer-col footer-contact">
-                <h4>Contact</h4>
-                <p class="footer-contact-item" style="display: flex; align-items: center; gap: 0.5rem;">
-                    <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; border: 1px solid rgba(255,255,255,0.2);">
-                        <!-- Bandera de Chile -->
-                        <rect width="20" height="14" fill="#D52B1E"/>
-                        <rect width="20" height="7" fill="white"/>
-                        <rect width="7" height="7" fill="#0039A6"/>
-                        <path d="M3.5 1.2 l0.4 1.3 h1.4 l-1.1 0.8 0.4 1.3 -1.1-0.8 -1.1 0.8 0.4-1.3 -1.1-0.8 h1.4 z" fill="white"/>
-                    </svg>
-                    Location: Santiago, Chile
-                </p>
-                <div class="social-links" aria-label="Social links">
-                    <a href="https://github.com/didonoso" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/diegodonosovera" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-14h4v2.5a3.5 3.5 0 0 1 3.5-1.5zM2 9h4v14h-4zM4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
-                    </a>
-                    <a href="mailto:diegoignaciodonosovera@gmail.com" aria-label="Send email">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </a>
+                <div class="footer-col footer-links">
+                    <h4 data-i18n="footer.links.title">Quick Links</h4>
+                    <nav aria-label="Footer Navigation">
+                        <a href="#about" data-i18n="nav.about">About</a>
+                        <a href="#projects" data-i18n="nav.projects">Projects</a>
+                        <a href="#experience" data-i18n="nav.experience">Experience</a>
+                        <a href="#contact" data-i18n="nav.contact">Contact</a>
+                    </nav>
                 </div>
-            </div>
+
+                <div class="footer-col footer-contact">
+                    <h4 data-i18n="footer.contact.title">Contact</h4>
+                    <p class="footer-contact-item" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; border: 1px solid rgba(255,255,255,0.2);">
+                            <!-- Bandera de Chile -->
+                            <rect width="20" height="14" fill="#D52B1E"/>
+                            <rect width="20" height="7" fill="white"/>
+                            <rect width="7" height="7" fill="#0039A6"/>
+                            <path d="M3.5 1.2 l0.4 1.3 h1.4 l-1.1 0.8 0.4 1.3 -1.1-0.8 -1.1 0.8 0.4-1.3 -1.1-0.8 h1.4 z" fill="white"/>
+                        </svg>
+                        <span data-i18n="contact.location.title">Location</span>: <span data-i18n="contact.location.value">Santiago, Chile</span>
+                    </p>
+                    <div class="social-links" aria-label="Social links">
+                        <a href="https://github.com/didonoso" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/diegodonosovera" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-14h4v2.5a3.5 3.5 0 0 1 3.5-1.5zM2 9h4v14h-4zM4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                        <a href="mailto:diegoignaciodonosovera@gmail.com" aria-label="Send email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </a>
+                    </div>
+                </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Diego Donoso Vera. All rights reserved.</p>
+            <p data-i18n="footer.rights">&copy; 2026 Diego Donoso Vera. All rights reserved.</p>
         </div>
     </footer>
 

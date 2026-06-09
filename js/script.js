@@ -100,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Disable button and show loading state
             submitBtn.disabled = true;
-            btnText.textContent = 'Sending...';
+            // Use localized 'sending' text when available
+            try { btnText.textContent = i18n.t('contact.form.sending'); } catch (e) { btnText.textContent = 'Sending...'; }
             submitBtn.classList.add('loading');
             formStatus.style.display = 'none';
             
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('SUCCESS!', response.status, response.text);
                 
                 // Show success message
-                formStatus.textContent = '✓ Message sent successfully!';
+                formStatus.textContent = i18n.t('contact.form.success');
                 formStatus.className = 'form-status success';
                 formStatus.style.display = 'block';
                 
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Reset button
                 submitBtn.disabled = false;
-                btnText.textContent = 'Send Message';
+                btnText.textContent = i18n.t('contact.form.send');
                 submitBtn.classList.remove('loading');
                 
                 // Hide success message after 5 seconds
@@ -137,15 +138,112 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('FAILED...', error);
                 
                 // Show error message
-                formStatus.textContent = '✗ Oops! Something went wrong. Please try again or email me directly.';
+                formStatus.textContent = i18n.t('contact.form.error');
                 formStatus.className = 'form-status error';
                 formStatus.style.display = 'block';
                 
                 // Reset button
                 submitBtn.disabled = false;
-                btnText.textContent = 'Send Message';
+                btnText.textContent = i18n.t('contact.form.send');
                 submitBtn.classList.remove('loading');
             });
         });
     }
+
+    // ============================================
+    // SIMPLE I18N (NAV ONLY)
+    // ============================================
+    const i18n = {
+        current: 'en',
+        cache: {},
+        async load(lang) {
+            if (this.cache[lang]) return this.cache[lang];
+            try {
+                const res = await fetch(`/locales/${lang}.json`);
+                if (!res.ok) throw new Error('Locale not found');
+                const json = await res.json();
+                this.cache[lang] = json;
+                return json;
+            } catch (e) {
+                console.warn('Failed to load locale', lang, e);
+                // Ensure we set an empty cache entry so t() won't throw and will return keys
+                this.cache[lang] = {};
+                return this.cache[lang];
+            }
+        },
+        t(key) {
+            const parts = key.split('.');
+            let node = this.cache[this.current];
+            for (const p of parts) {
+                if (!node) return key;
+                node = node[p];
+            }
+            return node ?? key;
+        },
+        async translatePage() {
+            await this.load(this.current);
+            // translate elements with data-i18n (textContent)
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const txt = this.t(key);
+                if (txt !== undefined) el.textContent = txt;
+            });
+            // translate elements with data-i18n-html (innerHTML)
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                const txt = this.t(key);
+                if (txt !== undefined) el.innerHTML = txt;
+            });
+            // translate placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                const txt = this.t(key);
+                if (txt !== undefined) el.setAttribute('placeholder', txt);
+            });
+            // set document language
+            document.documentElement.lang = this.current;
+        },
+        async setLanguage(lang) {
+            this.current = lang;
+            localStorage.setItem('site_lang', lang);
+            await this.translatePage();
+            updateToggleUI(lang);
+        }
+    };
+
+    function updateToggleUI(lang) {
+        const btn = document.getElementById('lang-toggle');
+        if (!btn) return;
+        btn.textContent = lang.toUpperCase();
+        btn.setAttribute('aria-pressed', lang === 'en' ? 'false' : 'true');
+    }
+
+    function initI18n() {
+        const saved = localStorage.getItem('site_lang');
+        const browser = (navigator.language && navigator.language.startsWith('es')) ? 'es' : 'en';
+        i18n.current = saved || browser;
+        // Initialize UI
+        updateToggleUI(i18n.current);
+        // Load and translate
+        i18n.translatePage();
+
+        const btn = document.getElementById('lang-toggle');
+        if (btn) {
+            btn.addEventListener('click', async () => {
+                const next = i18n.current === 'en' ? 'es' : 'en';
+                await i18n.setLanguage(next);
+            });
+            // allow toggle with Enter/Space
+            btn.addEventListener('keydown', async (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const next = i18n.current === 'en' ? 'es' : 'en';
+                    await i18n.setLanguage(next);
+                }
+            });
+        }
+    }
+
+    // Start i18n
+    initI18n();
 });

@@ -30,6 +30,8 @@ nav ul {
     gap: var(--spacing-md);
     list-style: none;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 /* Hamburger button - hidden by default */
@@ -45,6 +47,59 @@ nav ul {
     padding: 0;
     z-index: 11;
     position: relative;
+}
+
+/* Language toggle button - modern pill style */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    height: 34px;
+    padding: 0 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    background: linear-gradient(180deg, rgba(239, 246, 255, 1), rgba(226, 232, 255, 1));
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.06);
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transform: translateY(0);
+    transition: transform 60ms ease, box-shadow 60ms ease, background 120ms ease;
+    will-change: transform;
+    position: relative;
+    z-index: 12;
+}
+
+.lang-toggle:focus {
+    outline: none;
+    box-shadow: 0 8px 22px rgba(37,99,235,0.08);
+}
+
+/* Keep position consistent on hover/active to avoid jumping on click */
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+    transform: translateY(-1px);
+}
+
+/* Pressed state: keep baseline and provide subtle scale feedback */
+.lang-toggle:active {
+    transform: translateY(0) scale(0.995);
+}
+
+/* Prevent mobile tap highlight (visual jump) */
+.lang-toggle {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+header.scrolled .lang-toggle {
+    background: linear-gradient(180deg, rgba(6,12,34,0.9), rgba(2,6,23,0.85));
+    border-color: rgba(255,255,255,0.12);
+    color: white;
 }
 
 .hamburger-line {
@@ -83,6 +138,9 @@ nav a {
     transition: all var(--transition-fast);
     color: var(--color-text);
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 /* Nav links when scrolled */
@@ -436,6 +494,24 @@ section h2 {
     /* Show hamburger button on mobile */
     .hamburger {
         display: flex;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 15;
+    }
+    /* Keep language toggle visible on mobile - compact style and center it vertically next to hamburger */
+    .lang-toggle {
+        display: inline-flex;
+        margin-right: 0.25rem;
+        height: 30px;
+        padding: 0 0.45rem;
+        font-size: 0.825rem;
+        position: absolute;
+        left: 56px; /* place to the right of the hamburger */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 16;
     }
     
     /* Navigation adjustments */
@@ -605,6 +681,24 @@ section h2 {
     
     .about-buttons {
         justify-content: flex-start;
+    }
+}
+
+/* Compact nav spacing for tablet widths to avoid wrapping */
+@media (min-width: 768px) and (max-width: 1024px) {
+    nav ul {
+        gap: calc(var(--spacing-sm));
+        justify-content: center;
+    }
+    nav a {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.975rem;
+    }
+    .lang-toggle {
+        height: 30px;
+        padding: 0 0.5rem;
+        font-size: 0.825rem;
+        margin-right: 0.25rem;
     }
 }
 
