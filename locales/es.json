@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "about": "Sobre\u00A0mí",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "education": "Educación",
+    "contact": "Contacto"
+  }
+  ,
+  "hero": {
+    "subtitle": "Desarrollador Web Full Stack",
+    "description": "Especializado en crear aplicaciones web modernas, escalables y centradas en el usuario",
+    "cta_projects": "Ver Proyectos",
+    "cta_contact": "Hablemos"
+  },
+  "about": {
+    "title": "Sobre\u00A0mí",
+    "intro": "¡Hola! Soy Diego, un apasionado <strong>Desarrollador Full Stack Senior</strong> actualmente trabajando en <strong>INDRA</strong>, donde diseño y construyo soluciones web escalables que resuelven problemas del mundo real.",
+    "description1": "Con más de 3 años de experiencia profesional, me especializo en crear aplicaciones web modernas y de alto rendimiento utilizando tecnologías como <strong>React</strong>, <strong>Node.js</strong> y <strong>Angular</strong>. Mi trayectoria me ha llevado desde el desarrollo de plataformas con IA en <strong>Deliryum.AI</strong> hasta la arquitectura de soluciones empresariales en INDRA.",
+    "description2": "Me motiva el código limpio, el diseño centrado en el usuario y el aprendizaje continuo. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías, contribuyendo a proyectos de código abierto o compartiendo conocimiento con la comunidad de desarrolladores."
+  }
+  ,
+  "experience": {
+    "title": "Experiencia",
+    "indra": {
+      "role": "Full Stack Engineer",
+      "dates": "Ago 2023 — Presente",
+      "li1": "Desarrollé y mantuve plataformas empresariales para ENEL, Codelco y el Coordinador Eléctrico Nacional de Chile (CEN).",
+      "li2": "Participé en sistemas críticos de gestión energética y monitoreo industrial utilizados en entornos operativos a gran escala.",
+      "li3": "Lideré procesos de migración de bases de datos desde Oracle a PostgreSQL y modernicé APIs legacy usando ASP.NET Core 9.",
+      "li4": "Implementé Clean Architecture, CQRS, patrón Mediator y soluciones de automatización interna para mejorar la mantenibilidad y escalabilidad.",
+      "li5": "Colaboré en desarrollo full-stack usando Angular y PHP para aplicaciones empresariales."
+    },
+    "deliryum": {
+      "role": "Desarrollador de Software",
+      "dates": "Oct 2021 — Ago 2023",
+      "li1": "Desarrollé soluciones de analítica de video basadas en IA usando YOLO y PyTorch.",
+      "li2": "Construí APIs escalables con Flask, FastAPI y Django.",
+      "li3": "Creé aplicaciones frontend modernas con React JS consumiendo APIs REST.",
+      "li4": "Participé en liderazgo técnico y coordinación de equipos de desarrollo.",
+      "li5": "Diseñé interfaces web y desarrollé APIs REST.",
+      "li6": "Integré bases de datos y automatizé procesos internos.",
+      "li7": "Contribuí en proyectos de visión por computador y análisis de imágenes."
+    }
+  }
+
+  ,
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "frontend": { "title": "Desarrollo Frontend" },
+    "backend": { "title": "Desarrollo Backend" },
+    "databases": { "title": "Bases de Datos" },
+    "ai": { "title": "IA y Aprendizaje Automático" },
+    "architecture": { "title": "Arquitectura y Patrones" },
+    "tools": { "title": "Herramientas y DevOps" }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "portfolio": {
+      "title": "Sitio Web Personal de Portafolio",
+      "description": "Sitio de portafolio moderno y responsive que muestra mi experiencia profesional, habilidades técnicas y proyectos. Construido con HTML5 semántico, arquitectura CSS modular y JavaScript vanilla para un rendimiento óptimo."
+    },
+    "cta_live": "Ver Demo",
+    "cta_code": "Ver Código",
+    "more_coming": "Más proyectos pronto...",
+    "coming": {
+      "title": "Próximamente",
+      "description": "Actualmente estoy trabajando en nuevos proyectos emocionantes. ¡Vuelve pronto para ver más de mi trabajo!"
+    }
+  }
+  ,
+  "education": {
+    "title": "Educación y Certificaciones",
+    "duoc": {
+      "title": "Técnico Analista Programador",
+      "institution": "Instituto Profesional DUOC UC",
+      "year": "2019 - 2021",
+      "description": "Título técnico superior enfocado en desarrollo de software, gestión de bases de datos y análisis de sistemas. Graduado con distinciones (Dos menciones)."
+    },
+    "cisco": {
+      "title": "Python Fundamentals 1",
+      "institution": "CISCO Networking Academy",
+      "year": "03 Jun 2026",
+      "description": "Certificación integral que cubre fundamentos de programación en Python, estructuras de datos, flujo de control y principios de programación orientada a objetos."
+    },
+    "download": "Descargar Certificado"
+  },
+  "contact": {
+    "title": "Contacto",
+    "intro": "¿Tienes un proyecto en mente o quieres colaborar? ¡Me encantaría saber de ti!",
+    "email": { "title": "Email" },
+    "location": { "title": "Ubicación", "value": "Santiago, Chile" },
+    "social": { "title": "Redes" },
+    "form": {
+      "name": { "placeholder": "Tu nombre completo", "label": "Nombre" },
+      "email": { "placeholder": "tu.email@ejemplo.com", "label": "Email" },
+      "subject": { "placeholder": "¿De qué se trata?", "label": "Asunto" },
+      "message": { "placeholder": "Cuéntame sobre tu proyecto o consulta...", "label": "Mensaje" },
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "✓ Mensaje enviado correctamente!",
+      "error": "✗ ¡Ups! Algo salió mal. Intenta nuevamente o escríbeme por email."
+    }
+  }
+  ,
+  "footer": {
+    "about": {
+      "desc": "Senior Full Stack Developer — construyendo aplicaciones web escalables con claridad, rendimiento y diseño."
+    },
+    "links": { "title": "Enlaces Rápidos" },
+    "contact": { "title": "Contacto" },
+    "rights": "© 2026 Diego Donoso Vera. Todos los derechos reservados."
+  }
+}

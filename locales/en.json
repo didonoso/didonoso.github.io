@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  }
+  ,
+  "hero": {
+    "subtitle": "Full Stack Web Developer",
+    "description": "Specialized in creating modern, scalable, and user-centered web applications",
+    "cta_projects": "View Projects",
+    "cta_contact": "Let's Talk"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "Hi! I'm Diego, a passionate <strong>Senior Full Stack Developer</strong> currently working at <strong>INDRA</strong>, where I design and build scalable web solutions that solve real-world problems.",
+    "description1": "With over 3 years of professional experience, I specialize in creating modern, performant web applications using technologies like <strong>React</strong>, <strong>Node.js</strong>, and <strong>Angular</strong>. My journey has taken me from developing AI-powered platforms at <strong>Deliryum.AI</strong> to architecting enterprise-level solutions at INDRA.",
+    "description2": "I'm driven by clean code, user-centric design, and continuous learning. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
+  }
+  ,
+  "experience": {
+    "title": "Experience",
+    "indra": {
+      "role": "Full Stack Engineer",
+      "dates": "Aug 2023 — Present",
+      "li1": "Developed and maintained enterprise platforms for ENEL, Codelco, and Chile's National Electrical Coordinator (CEN).",
+      "li2": "Participated in critical energy management and industrial monitoring systems used in large-scale operational environments.",
+      "li3": "Led database migration processes from Oracle to PostgreSQL and modernized legacy APIs using ASP.NET Core 9.",
+      "li4": "Implemented Clean Architecture, CQRS, Mediator pattern, and internal automation solutions to improve maintainability and scalability.",
+      "li5": "Collaborated in full-stack development using Angular and PHP for enterprise-level applications."
+    },
+    "deliryum": {
+      "role": "Software Developer",
+      "dates": "Oct 2021 — Aug 2023",
+      "li1": "Developed AI-powered video analytics solutions using YOLO and PyTorch.",
+      "li2": "Built scalable APIs with Flask, FastAPI, and Django.",
+      "li3": "Created modern frontend applications with React JS consuming REST APIs.",
+      "li4": "Participated in technical leadership and development team coordination.",
+      "li5": "Designed web interfaces and developed REST APIs.",
+      "li6": "Integrated databases and automated internal processes.",
+      "li7": "Contributed to computer vision and image analysis projects."
+    }
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "frontend": { "title": "Frontend Development" },
+    "backend": { "title": "Backend Development" },
+    "databases": { "title": "Databases" },
+    "ai": { "title": "AI & Machine Learning" },
+    "architecture": { "title": "Architecture & Patterns" },
+    "tools": { "title": "Tools & DevOps" }
+  },
+  "projects": {
+    "title": "Projects",
+    "portfolio": {
+      "title": "Personal Portfolio Website",
+      "description": "Modern, responsive portfolio website showcasing my professional experience, technical skills, and projects. Built with semantic HTML5, modular CSS architecture, and vanilla JavaScript for optimal performance."
+    },
+    "cta_live": "Live Demo",
+    "cta_code": "View Code",
+    "more_coming": "More projects coming soon...",
+    "coming": {
+      "title": "Coming Soon",
+      "description": "I'm currently working on exciting new projects. Check back soon to see more of my work!"
+    }
+  }
+
+  ,
+  "education": {
+    "title": "Education & Certifications",
+    "duoc": {
+      "title": "Technical Analyst Programmer",
+      "institution": "DUOC UC Professional Institute",
+      "year": "2019 - 2021",
+      "description": "Higher technical degree focused on software development, database management, and system analysis. Graduated with honors (Two Distinctions)."
+    },
+    "cisco": {
+      "title": "Python Fundamentals 1",
+      "institution": "CISCO Networking Academy",
+      "year": "03 Jun 2026",
+      "description": "Comprehensive certification covering Python programming fundamentals, data structures, control flow, and object-oriented programming principles."
+    },
+    "download": "Download Certificate"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "intro": "Have a project in mind or want to collaborate? I'd love to hear from you!",
+    "email": { "title": "Email" },
+    "location": { "title": "Location", "value": "Santiago, Chile" },
+    "social": { "title": "Social" },
+    "form": {
+      "name": { "placeholder": "Your full name", "label": "Name" },
+      "email": { "placeholder": "your.email@example.com", "label": "Email" },
+      "subject": { "placeholder": "What's this about?", "label": "Subject" },
+      "message": { "placeholder": "Tell me about your project or inquiry...", "label": "Message" },
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "✓ Message sent successfully!",
+      "error": "✗ Oops! Something went wrong. Please try again or email me directly."
+    }
+  }
+  ,
+  "footer": {
+    "about": {
+      "desc": "Senior Full Stack Developer — building scalable web applications with clarity, performance and design."
+    },
+    "links": { "title": "Quick Links" },
+    "contact": { "title": "Contact" },
+    "rights": "© 2026 Diego Donoso Vera. All rights reserved."
+  }
+}
