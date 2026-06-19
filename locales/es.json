@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "Diego Donoso Vera - Desarrollador Web Full Stack | Portafolio",
+    "description": "Diego Donoso Vera - Desarrollador Full Stack Senior especializado en crear aplicaciones web modernas, escalables y centradas en el usuario con React, Node.js y Angular.",
+    "og_title": "Diego Donoso Vera - Desarrollador Web Full Stack",
+    "twitter_title": "Diego Donoso Vera - Desarrollador Web Full Stack"
+  },
   "nav": {
     "about": "Sobre\u00A0mí",
     "experience": "Experiencia",

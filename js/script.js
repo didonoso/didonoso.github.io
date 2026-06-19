@@ -202,6 +202,41 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             // set document language
             document.documentElement.lang = this.current;
+            // update SEO meta tags
+            this.updateMetaTags();
+        },
+        updateMetaTags() {
+            const title = this.t('seo.title');
+            const description = this.t('seo.description');
+            const ogTitle = this.t('seo.og_title');
+            const twitterTitle = this.t('seo.twitter_title');
+            
+            // Update page title
+            if (title) document.title = title;
+            
+            // Update meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc && description) metaDesc.setAttribute('content', description);
+            
+            // Update Open Graph tags
+            const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+            if (ogTitleMeta && ogTitle) ogTitleMeta.setAttribute('content', ogTitle);
+            
+            const ogDescMeta = document.querySelector('meta[property="og:description"]');
+            if (ogDescMeta && description) ogDescMeta.setAttribute('content', description);
+            
+            // Update Twitter Card tags
+            const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]');
+            if (twitterTitleMeta && twitterTitle) twitterTitleMeta.setAttribute('content', twitterTitle);
+            
+            const twitterDescMeta = document.querySelector('meta[name="twitter:description"]');
+            if (twitterDescMeta && description) twitterDescMeta.setAttribute('content', description);
+            
+            // Update locale meta tag
+            const ogLocaleMeta = document.querySelector('meta[property="og:locale"]');
+            if (ogLocaleMeta) {
+                ogLocaleMeta.setAttribute('content', this.current === 'es' ? 'es_ES' : 'en_US');
+            }
         },
         async setLanguage(lang) {
             this.current = lang;
