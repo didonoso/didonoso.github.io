@@ -1,6 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ============================================
+    // MODERN IMAGE FORMAT SUPPORT DETECTION
+    // ============================================
+    async function supportsImageFormat(format) {
+        const testImages = {
+            'avif': 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A=',
+            'webp': 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoCAAEAAQAcJaQAA3AA/v3AgAA='
+        };
+        
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve(true);
+            img.onerror = () => resolve(false);
+            img.src = testImages[format];
+        });
+    }
+    
+    // Load appropriate image formats for background images
+    async function loadModernBackgrounds() {
+        const supportsAvif = await supportsImageFormat('avif');
+        const supportsWebp = await supportsImageFormat('webp');
+        
+        // Update hero carousel backgrounds
+        document.querySelectorAll('[data-bg-avif]').forEach(el => {
+            let bgUrl;
+            if (supportsAvif && el.dataset.bgAvif) {
+                bgUrl = el.dataset.bgAvif;
+            } else if (supportsWebp && el.dataset.bgWebp) {
+                bgUrl = el.dataset.bgWebp;
+            }
+            
+            if (bgUrl) {
+                // Preload the image before setting as background
+                const img = new Image();
+                img.onload = () => {
+                    el.style.backgroundImage = `url('${bgUrl}')`;
+                };
+                img.src = bgUrl;
+            }
+        });
+    }
+    
+    // Initialize modern image format loading
+    loadModernBackgrounds();
+
+    // ============================================
     // NAVBAR SCROLL EFFECT
     // ============================================
     const header = document.querySelector('header');
