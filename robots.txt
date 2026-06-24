@@ -1,0 +1,9 @@
+# robots.txt for didonoso.github.io
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://didonoso.github.io/sitemap.xml
+
+# Block access to specific files (if needed in the future)
+# Disallow: /private/

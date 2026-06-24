@@ -3,7 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diego Donoso Vera - Portfolio</title>
+    <title>Diego Donoso Vera - Full Stack Web Developer | Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Diego Donoso Vera - Senior Full Stack Developer specialized in creating modern, scalable, and user-centered web applications with React, Node.js, and Angular.">
+    <meta name="keywords" content="Full Stack Developer, Web Developer, React, Node.js, Angular, JavaScript, Portfolio, Diego Donoso, INDRA, Software Engineer">
+    <meta name="author" content="Diego Donoso Vera">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://didonoso.github.io/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://didonoso.github.io/">
+    <meta property="og:title" content="Diego Donoso Vera - Full Stack Web Developer">
+    <meta property="og:description" content="Senior Full Stack Developer specialized in creating modern, scalable, and user-centered web applications with React, Node.js, and Angular.">
+    <meta property="og:image" content="https://didonoso.github.io/assets/images/avatar.jpg">
+    <meta property="og:image:alt" content="Diego Donoso Vera - Full Stack Developer">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:site_name" content="Diego Donoso Vera Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://didonoso.github.io/">
+    <meta name="twitter:title" content="Diego Donoso Vera - Full Stack Web Developer">
+    <meta name="twitter:description" content="Senior Full Stack Developer specialized in creating modern, scalable, and user-centered web applications with React, Node.js, and Angular.">
+    <meta name="twitter:image" content="https://didonoso.github.io/assets/images/avatar.jpg">
+    <meta name="twitter:creator" content="@didonoso">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -50,8 +79,8 @@
             <!-- Background Image Carousel -->
             <div class="hero-carousel">
                 <div class="hero-slide active" style="background-image: url('assets/images/hero1.avif')"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero2.jpg')"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero3.jpg')"></div>
+                <div class="hero-slide" data-bg-avif="assets/images/hero2.avif" data-bg-webp="assets/images/hero2.webp" style="background-image: url('assets/images/hero2.webp')"></div>
+                <div class="hero-slide" data-bg-avif="assets/images/hero3.avif" data-bg-webp="assets/images/hero3.webp" style="background-image: url('assets/images/hero3.webp')"></div>
             </div>
             
             <!-- Hero Content -->
@@ -70,7 +99,11 @@
         <section id="about">
             <div class="about-container">
                 <div class="about-image">
-                    <img src="assets/images/avatar.jpg" alt="Diego Donoso Vera - Full Stack Developer" class="avatar">
+                    <picture>
+                        <source srcset="assets/images/avatar.avif" type="image/avif">
+                        <source srcset="assets/images/avatar.webp" type="image/webp">
+                        <img src="assets/images/avatar.jpg" alt="Diego Donoso Vera - Full Stack Developer" class="avatar" loading="lazy" width="400" height="400">
+                    </picture>
                 </div>
                 <div class="about-content">
                     <h2 data-i18n="about.title">About Me</h2>
@@ -110,9 +143,16 @@
                             <a href="https://www.linkedin.com/company/indragroupglobal/"
                                target="_blank"
                                rel="noopener noreferrer">
-                                <img src="assets/images/indra-logo.jpg"
-                                     alt="Indra Logo"
-                                     class="company-logo">
+                                <picture>
+                                    <source srcset="assets/images/indra-logo.avif" type="image/avif">
+                                    <source srcset="assets/images/indra-logo.webp" type="image/webp">
+                                    <img src="assets/images/indra-logo.jpg"
+                                         alt="Indra Logo"
+                                         class="company-logo"
+                                         loading="lazy"
+                                         width="100"
+                                         height="100">
+                                </picture>
                                 Indra
                                 <svg class="external-icon"
                                      xmlns="http://www.w3.org/2000/svg"
@@ -157,9 +197,16 @@
                             <a href="https://www.linkedin.com/company/deliryum-ai/"
                                target="_blank"
                                rel="noopener noreferrer">
-                                <img src="assets/images/deliryum-logo.jpg"
-                                     alt="Deliryum.AI Logo"
-                                     class="company-logo">
+                                <picture>
+                                    <source srcset="assets/images/deliryum-logo.avif" type="image/avif">
+                                    <source srcset="assets/images/deliryum-logo.webp" type="image/webp">
+                                    <img src="assets/images/deliryum-logo.jpg"
+                                         alt="Deliryum.AI Logo"
+                                         class="company-logo"
+                                         loading="lazy"
+                                         width="100"
+                                         height="100">
+                                </picture>
                                 Deliryum.AI
                                 <svg class="external-icon"
                                      xmlns="http://www.w3.org/2000/svg"
@@ -296,7 +343,7 @@
             <div class="projects-grid">
                 <!-- Portfolio Website -->
                 <article class="project-card">
-                    <div class="project-image" style="background-image: url('assets/images/project-1.png');">
+                    <div class="project-image" data-bg-avif="assets/images/project-1.avif" data-bg-webp="assets/images/project-1.webp" style="background-image: url('assets/images/project-1.webp');">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title" data-i18n="projects.portfolio.title">Personal Portfolio Website</h3>
@@ -355,7 +402,11 @@
                 <!-- DUOC UC Degree -->
                 <article class="education-card">
                     <div class="education-image">
-                        <img src="assets/images/title-analyst.jpg" alt="DUOC UC Technical Analyst Programmer Diploma">
+                        <picture>
+                            <source srcset="assets/images/title-analyst.avif" type="image/avif">
+                            <source srcset="assets/images/title-analyst.webp" type="image/webp">
+                            <img src="assets/images/title-analyst.jpg" alt="DUOC UC Technical Analyst Programmer Diploma" loading="lazy" width="800" height="600">
+                        </picture>
                     </div>
                     <div class="education-content">
                         <div class="education-header">
@@ -390,7 +441,11 @@
                 <!-- CISCO Certification -->
                 <article class="education-card">
                     <div class="education-image">
-                        <img src="assets/images/python_fundamentals_1.png" alt="CISCO Python Fundamentals 1 Certification">
+                        <picture>
+                            <source srcset="assets/images/python_fundamentals_1.avif" type="image/avif">
+                            <source srcset="assets/images/python_fundamentals_1.webp" type="image/webp">
+                            <img src="assets/images/python_fundamentals_1.png" alt="CISCO Python Fundamentals 1 Certification" loading="lazy" width="800" height="600">
+                        </picture>
                     </div>
                     <div class="education-content">
                         <div class="education-header">
