@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Meta Tags Tester - Diego Donoso Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .test-item {
+            margin: 10px 0;
+            padding: 12px;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .status {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .status.pass {
+            background: #10b981;
+            color: white;
+        }
+        
+        .status.fail {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .status.warn {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .test-label {
+            flex: 1;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .test-value {
+            color: #666;
+            font-size: 12px;
+            font-family: monospace;
+            max-width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .summary {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat {
+            flex: 1;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .pass-color { color: #10b981; }
+        .fail-color { color: #ef4444; }
+        .warn-color { color: #f59e0b; }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+        }
+        
+        .tool-link {
+            display: block;
+            color: #667eea;
+            text-decoration: none;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .tool-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 SEO Meta Tags Tester</h1>
+        <p class="subtitle">Testing meta tags for didonoso.github.io</p>
+        
+        <div class="summary" id="summary">
+            <div class="stat">
+                <div class="stat-number pass-color" id="passCount">0</div>
+                <div class="stat-label">Passed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number fail-color" id="failCount">0</div>
+                <div class="stat-label">Failed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number warn-color" id="warnCount">0</div>
+                <div class="stat-label">Warnings</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📄 Basic SEO Meta Tags</h2>
+            <div id="basicTags"></div>
+        </div>
+        
+        <div class="section">
+            <h2>📱 Open Graph Tags (Facebook)</h2>
+            <div id="ogTags"></div>
+        </div>
+        
+        <div class="section">
+            <h2>🐦 Twitter Card Tags</h2>
+            <div id="twitterTags"></div>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 Testing Tools</h2>
+            <a href="https://developers.facebook.com/tools/debug/" target="_blank" class="btn">Facebook Debugger</a>
+            <a href="https://cards-dev.twitter.com/validator" target="_blank" class="btn">Twitter Validator</a>
+            <a href="https://search.google.com/test/rich-results" target="_blank" class="btn">Google Rich Results</a>
+            <a href="https://pagespeed.web.dev/" target="_blank" class="btn">PageSpeed Insights</a>
+        </div>
+        
+        <div class="section">
+            <h2>📋 Next Steps</h2>
+            <ol style="margin-left: 20px; color: #333; line-height: 1.8;">
+                <li>Test all social sharing with the tools above</li>
+                <li>Submit sitemap to Google Search Console</li>
+                <li>Submit sitemap to Bing Webmaster Tools</li>
+                <li>Request indexing for main page</li>
+                <li>Monitor coverage in Search Console (48h)</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        // Meta tag tests
+        const tests = {
+            basic: [
+                { name: 'Title', selector: 'title', minLength: 30, maxLength: 60 },
+                { name: 'Meta Description', selector: 'meta[name="description"]', attr: 'content', minLength: 50, maxLength: 160 },
+                { name: 'Meta Keywords', selector: 'meta[name="keywords"]', attr: 'content' },
+                { name: 'Meta Author', selector: 'meta[name="author"]', attr: 'content' },
+                { name: 'Meta Robots', selector: 'meta[name="robots"]', attr: 'content' },
+                { name: 'Canonical Link', selector: 'link[rel="canonical"]', attr: 'href' },
+            ],
+            og: [
+                { name: 'OG Type', selector: 'meta[property="og:type"]', attr: 'content' },
+                { name: 'OG URL', selector: 'meta[property="og:url"]', attr: 'content' },
+                { name: 'OG Title', selector: 'meta[property="og:title"]', attr: 'content' },
+                { name: 'OG Description', selector: 'meta[property="og:description"]', attr: 'content' },
+                { name: 'OG Image', selector: 'meta[property="og:image"]', attr: 'content', checkImage: true },
+                { name: 'OG Image Alt', selector: 'meta[property="og:image:alt"]', attr: 'content' },
+                { name: 'OG Locale', selector: 'meta[property="og:locale"]', attr: 'content' },
+            ],
+            twitter: [
+                { name: 'Twitter Card', selector: 'meta[name="twitter:card"]', attr: 'content' },
+                { name: 'Twitter URL', selector: 'meta[name="twitter:url"]', attr: 'content' },
+                { name: 'Twitter Title', selector: 'meta[name="twitter:title"]', attr: 'content' },
+                { name: 'Twitter Description', selector: 'meta[name="twitter:description"]', attr: 'content' },
+                { name: 'Twitter Image', selector: 'meta[name="twitter:image"]', attr: 'content', checkImage: true },
+            ]
+        };
+        
+        let passCount = 0, failCount = 0, warnCount = 0;
+        
+        function testMetaTag(test, container) {
+            const element = document.querySelector(test.selector);
+            const div = document.createElement('div');
+            div.className = 'test-item';
+            
+            let status = 'fail';
+            let icon = '✗';
+            let value = 'Not found';
+            
+            if (element) {
+                value = test.attr ? element.getAttribute(test.attr) : element.textContent;
+                
+                if (value) {
+                    status = 'pass';
+                    icon = '✓';
+                    
+                    // Length checks
+                    if (test.minLength && value.length < test.minLength) {
+                        status = 'warn';
+                        icon = '⚠';
+                        value += ` (Too short: ${value.length}/${test.minLength})`;
+                    }
+                    
+                    if (test.maxLength && value.length > test.maxLength) {
+                        status = 'warn';
+                        icon = '⚠';
+                        value += ` (Too long: ${value.length}/${test.maxLength})`;
+                    }
+                } else {
+                    status = 'fail';
+                    icon = '✗';
+                    value = 'Empty value';
+                }
+            }
+            
+            if (status === 'pass') passCount++;
+            else if (status === 'fail') failCount++;
+            else if (status === 'warn') warnCount++;
+            
+            div.innerHTML = `
+                <div class="status ${status}">${icon}</div>
+                <div class="test-label">${test.name}</div>
+                <div class="test-value">${value}</div>
+            `;
+            
+            container.appendChild(div);
+        }
+        
+        // Run tests
+        tests.basic.forEach(test => testMetaTag(test, document.getElementById('basicTags')));
+        tests.og.forEach(test => testMetaTag(test, document.getElementById('ogTags')));
+        tests.twitter.forEach(test => testMetaTag(test, document.getElementById('twitterTags')));
+        
+        // Update summary
+        document.getElementById('passCount').textContent = passCount;
+        document.getElementById('failCount').textContent = failCount;
+        document.getElementById('warnCount').textContent = warnCount;
+        
+        // Log results
+        console.log('✅ SEO Test Results:', {
+            passed: passCount,
+            failed: failCount,
+            warnings: warnCount,
+            total: passCount + failCount + warnCount
+        });
+    </script>
+</body>
+</html>

@@ -32,22 +32,21 @@
     "indra": {
       "role": "Full Stack Engineer",
       "dates": "Aug 2023 — Present",
-      "li1": "Developed and maintained enterprise platforms for ENEL, Codelco, and Chile's National Electrical Coordinator (CEN).",
-      "li2": "Participated in critical energy management and industrial monitoring systems used in large-scale operational environments.",
-      "li3": "Led database migration processes from Oracle to PostgreSQL and modernized legacy APIs using ASP.NET Core 9.",
-      "li4": "Implemented Clean Architecture, CQRS, Mediator pattern, and internal automation solutions to improve maintainability and scalability.",
-      "li5": "Collaborated in full-stack development using Angular and PHP for enterprise-level applications."
+      "li1": "Built and maintained enterprise platforms for ENEL, Codelco, and Chile's National Electrical Coordinator (CEN).",
+      "li2": "Engineered critical energy management and industrial monitoring systems for large-scale operations.",
+      "li3": "Migrated databases from Oracle to PostgreSQL and modernized legacy APIs with ASP.NET Core 9.",
+      "li4": "Architected solutions using Clean Architecture, CQRS, and Mediator patterns to enhance scalability and maintainability.",
+      "li5": "Developed full-stack applications with Angular and PHP for enterprise clients."
     },
     "deliryum": {
       "role": "Software Developer",
       "dates": "Oct 2021 — Aug 2023",
-      "li1": "Developed AI-powered video analytics solutions using YOLO and PyTorch.",
-      "li2": "Built scalable APIs with Flask, FastAPI, and Django.",
-      "li3": "Created modern frontend applications with React JS consuming REST APIs.",
-      "li4": "Participated in technical leadership and development team coordination.",
-      "li5": "Designed web interfaces and developed REST APIs.",
-      "li6": "Integrated databases and automated internal processes.",
-      "li7": "Contributed to computer vision and image analysis projects."
+      "li1": "Built AI-powered video analytics solutions using YOLO and PyTorch for object detection and tracking.",
+      "li2": "Developed scalable REST APIs with Flask, FastAPI, and Django for production environments.",
+      "li3": "Created modern React applications consuming REST APIs with real-time data visualization.",
+      "li4": "Led technical coordination and mentored development team members.",
+      "li5": "Automated internal workflows and integrated database systems for improved efficiency.",
+      "li6": "Implemented computer vision algorithms for image analysis and pattern recognition."
     }
   },
   "skills": {

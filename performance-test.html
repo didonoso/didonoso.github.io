@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Test - Diego Donoso Portfolio</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #2563eb;
+            border-radius: 8px;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .pass { background: #10b981; color: white; }
+        .fail { background: #ef4444; color: white; }
+        .pending { background: #f59e0b; color: white; }
+        button {
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        pre {
+            background: #f8fafc;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Performance Optimization Test Suite</h1>
+    <p>This page validates all performance optimizations implemented for the portfolio.</p>
+    
+    <div class="test-section">
+        <h2>1. Critical CSS Check</h2>
+        <p>Verifying critical CSS is inlined in the HTML head...</p>
+        <div id="critical-css-result">
+            <span class="status pending">TESTING</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Async CSS Loading</h2>
+        <p>Verifying CSS files are loaded asynchronously...</p>
+        <div id="async-css-result">
+            <span class="status pending">TESTING</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Image Preload</h2>
+        <p>Checking if LCP image (hero1.avif) has preload hint...</p>
+        <div id="preload-result">
+            <span class="status pending">TESTING</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. Deferred JavaScript</h2>
+        <p>Verifying scripts are deferred...</p>
+        <div id="defer-result">
+            <span class="status pending">TESTING</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>5. Modern Image Formats</h2>
+        <p>Testing AVIF/WebP support...</p>
+        <div id="image-format-result">
+            <span class="status pending">TESTING</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>6. Resource Hints</h2>
+        <p>Checking preconnect/dns-prefetch...</p>
+        <div id="resource-hints-result">
+            <span class="status pending">TESTING</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📊 Run Lighthouse</h2>
+        <p>Open Chrome DevTools and run Lighthouse audit:</p>
+        <ol>
+            <li>Press F12 to open DevTools</li>
+            <li>Go to "Lighthouse" tab</li>
+            <li>Select "Performance" only</li>
+            <li>Choose "Desktop" or "Mobile"</li>
+            <li>Click "Analyze page load"</li>
+        </ol>
+        <p><strong>Expected Score: 95-100</strong></p>
+    </div>
+
+    <div class="test-section">
+        <h2>🧪 Test Compression & Caching</h2>
+        <p>Run these commands in your terminal:</p>
+        <pre><code># Test gzip compression
+curl -H "Accept-Encoding: gzip,deflate" -I https://didonoso.github.io/
+
+# Test cache headers
+curl -I https://didonoso.github.io/css/base.css</code></pre>
+        <button onclick="testCompression()">Test Compression Headers</button>
+        <div id="compression-result" style="margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        // Run tests when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            runAllTests();
+        });
+
+        async function runAllTests() {
+            await testCriticalCSS();
+            await testAsyncCSS();
+            await testPreload();
+            await testDefer();
+            await testImageFormats();
+            await testResourceHints();
+        }
+
+        async function testCriticalCSS() {
+            const result = document.getElementById('critical-css-result');
+            
+            // Fetch index.html and check for inline styles
+            try {
+                const response = await fetch('../index.html');
+                const html = await response.text();
+                
+                const hasInlineCSS = html.includes('<style>') && html.includes('Critical above-the-fold styles');
+                const hasCSSVariables = html.includes('--color-primary') && html.includes(':root');
+                
+                if (hasInlineCSS && hasCSSVariables) {
+                    result.innerHTML = '<span class="status pass">✓ PASS</span> Critical CSS is inlined';
+                } else {
+                    result.innerHTML = '<span class="status fail">✗ FAIL</span> Critical CSS not found';
+                }
+            } catch (error) {
+                result.innerHTML = '<span class="status fail">✗ ERROR</span> Could not fetch index.html';
+            }
+        }
+
+        async function testAsyncCSS() {
+            const result = document.getElementById('async-css-result');
+            
+            try {
+                const response = await fetch('../index.html');
+                const html = await response.text();
+                
+                const hasPreload = html.includes('rel="preload"') && html.includes('as="style"');
+                const hasOnload = html.includes('onload="this.onload=null;this.rel=\'stylesheet\'"');
+                
+                if (hasPreload && hasOnload) {
+                    result.innerHTML = '<span class="status pass">✓ PASS</span> CSS loaded asynchronously';
+                } else {
+                    result.innerHTML = '<span class="status fail">✗ FAIL</span> CSS not async';
+                }
+            } catch (error) {
+                result.innerHTML = '<span class="status fail">✗ ERROR</span> Test failed';
+            }
+        }
+
+        async function testPreload() {
+            const result = document.getElementById('preload-result');
+            
+            try {
+                const response = await fetch('../index.html');
+                const html = await response.text();
+                
+                const hasImagePreload = html.includes('rel="preload"') && 
+                                       html.includes('as="image"') && 
+                                       html.includes('hero1.avif');
+                const hasFetchPriority = html.includes('fetchpriority="high"');
+                
+                if (hasImagePreload) {
+                    result.innerHTML = '<span class="status pass">✓ PASS</span> LCP image preloaded' + 
+                                      (hasFetchPriority ? ' with fetchpriority' : '');
+                } else {
+                    result.innerHTML = '<span class="status fail">✗ FAIL</span> Image preload missing';
+                }
+            } catch (error) {
+                result.innerHTML = '<span class="status fail">✗ ERROR</span> Test failed';
+            }
+        }
+
+        async function testDefer() {
+            const result = document.getElementById('defer-result');
+            
+            try {
+                const response = await fetch('../index.html');
+                const html = await response.text();
+                
+                const hasDefer = html.includes('defer src="js/script.js"') && 
+                                html.includes('defer src="https://cdn.jsdelivr.net');
+                
+                if (hasDefer) {
+                    result.innerHTML = '<span class="status pass">✓ PASS</span> Scripts deferred';
+                } else {
+                    result.innerHTML = '<span class="status fail">✗ FAIL</span> Scripts not deferred';
+                }
+            } catch (error) {
+                result.innerHTML = '<span class="status fail">✗ ERROR</span> Test failed';
+            }
+        }
+
+        async function testImageFormats() {
+            const result = document.getElementById('image-format-result');
+            
+            // Test AVIF support
+            const avif = await testImageFormat('avif');
+            const webp = await testImageFormat('webp');
+            
+            if (avif) {
+                result.innerHTML = '<span class="status pass">✓ PASS</span> Browser supports AVIF & WebP';
+            } else if (webp) {
+                result.innerHTML = '<span class="status pass">✓ PASS</span> Browser supports WebP (AVIF fallback OK)';
+            } else {
+                result.innerHTML = '<span class="status fail">⚠ WARNING</span> Limited image format support';
+            }
+        }
+
+        function testImageFormat(format) {
+            return new Promise((resolve) => {
+                const testImages = {
+                    'avif': 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A=',
+                    'webp': 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoCAAEAAQAcJaQAA3AA/v3AgAA='
+                };
+                
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = testImages[format];
+            });
+        }
+
+        async function testResourceHints() {
+            const result = document.getElementById('resource-hints-result');
+            
+            try {
+                const response = await fetch('../index.html');
+                const html = await response.text();
+                
+                const hasPreconnect = html.includes('rel="preconnect"') && html.includes('cdn.jsdelivr.net');
+                const hasDNSPrefetch = html.includes('rel="dns-prefetch"');
+                
+                if (hasPreconnect && hasDNSPrefetch) {
+                    result.innerHTML = '<span class="status pass">✓ PASS</span> Resource hints configured';
+                } else {
+                    result.innerHTML = '<span class="status fail">✗ FAIL</span> Resource hints missing';
+                }
+            } catch (error) {
+                result.innerHTML = '<span class="status fail">✗ ERROR</span> Test failed';
+            }
+        }
+
+        async function testCompression() {
+            const result = document.getElementById('compression-result');
+            result.innerHTML = '<p>Checking compression headers...</p>';
+            
+            try {
+                const response = await fetch('../css/base.css');
+                const headers = response.headers;
+                
+                const contentEncoding = headers.get('content-encoding');
+                const cacheControl = headers.get('cache-control');
+                
+                let message = '<pre>';
+                message += `Content-Encoding: ${contentEncoding || 'Not set'}\n`;
+                message += `Cache-Control: ${cacheControl || 'Not set'}\n`;
+                message += `Content-Type: ${headers.get('content-type') || 'Not set'}`;
+                message += '</pre>';
+                
+                if (contentEncoding && (contentEncoding.includes('gzip') || contentEncoding.includes('br'))) {
+                    message += '<p><span class="status pass">✓</span> Compression is enabled</p>';
+                } else {
+                    message += '<p><span class="status pending">⚠</span> Compression may not be configured (or already decompressed by browser)</p>';
+                }
+                
+                result.innerHTML = message;
+            } catch (error) {
+                result.innerHTML = '<p><span class="status fail">✗</span> Error testing compression</p>';
+            }
+        }
+    </script>
+</body>
+</html>

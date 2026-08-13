@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://didonoso.github.io/">
     <meta property="og:title" content="Diego Donoso Vera - Full Stack Web Developer">
     <meta property="og:description" content="Senior Full Stack Developer specialized in creating modern, scalable, and user-centered web applications with React, Node.js, and Angular.">
-    <meta property="og:image" content="https://didonoso.github.io/assets/images/avatar.jpg">
+    <meta property="og:image" content="https://didonoso.github.io/assets/images/avatar.avif">
     <meta property="og:image:alt" content="Diego Donoso Vera - Full Stack Developer">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="es_ES">
@@ -31,7 +31,7 @@
     <meta name="twitter:url" content="https://didonoso.github.io/">
     <meta name="twitter:title" content="Diego Donoso Vera - Full Stack Web Developer">
     <meta name="twitter:description" content="Senior Full Stack Developer specialized in creating modern, scalable, and user-centered web applications with React, Node.js, and Angular.">
-    <meta name="twitter:image" content="https://didonoso.github.io/assets/images/avatar.jpg">
+    <meta name="twitter:image" content="https://didonoso.github.io/assets/images/avatar.avif">
     <meta name="twitter:creator" content="@didonoso">
     
     <!-- Favicon -->
@@ -39,13 +39,68 @@
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
     
-    <!-- CSS Modular Structure -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
+    <!-- Performance Optimizations -->
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Preload LCP image (hero background) -->
+    <link rel="preload" as="image" href="assets/images/hero1.avif" type="image/avif" fetchpriority="high">
+    
+    <!-- Critical CSS (inlined for fastest render) -->
+    <style>
+        /* Critical above-the-fold styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-primary: #2563eb;
+            --color-secondary: #64748b;
+            --color-accent: #ef4444;
+            --color-text: #1e293b;
+            --color-text-light: #64748b;
+            --color-background: #ffffff;
+            --color-background-alt: #f8fafc;
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-base: 16px;
+            --font-size-h1: 3rem;
+            --font-size-h2: 2rem;
+            --font-size-h3: 1.5rem;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            --max-width: 1200px;
+            --border-radius: 8px;
+            --transition-fast: 150ms ease;
+            --transition-base: 300ms ease;
+        }
+        html { font-size: var(--font-size-base); scroll-behavior: smooth; }
+        body { font-family: var(--font-primary); line-height: 1.6; color: var(--color-text); background-color: var(--color-background); overflow-x: hidden; }
+        header { padding: var(--spacing-sm) var(--spacing-md); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 10; transition: all 0.3s ease; }
+        nav ul { display: flex; gap: var(--spacing-md); list-style: none; justify-content: center; align-items: center; flex-wrap: wrap; }
+        #hero { text-align: center; padding: var(--spacing-xl) 0; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+        #hero h1 { margin-bottom: var(--spacing-sm); font-size: var(--font-size-h1); color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        #hero p { font-size: 1.25rem; color: #ffffff; }
+        .hero-carousel { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
+        .hero-slide.active { opacity: 1; }
+    </style>
+    
+    <!-- CSS Modular Structure - Load asynchronously -->
+    <link rel="preload" href="css/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/layout.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/components.css">
+    </noscript>
+    
+    <!-- Async CSS loader polyfill for older browsers -->
+    <script>
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+        !function(e){"use strict";var t=function(t,n,r,o){var i,d=e.document,a=d.createElement("link");if(n)i=n;else{var l=(d.body||d.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var f=d.styleSheets;if(o)for(var s in o)o.hasOwnProperty(s)&&a.setAttribute(s,o[s]);a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(d.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var u=function(e){for(var t=a.href,n=f.length;n--;)if(f[n].href===t)return e();setTimeout(function(){u(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=r||"all"}),a.onloadcssdefined=u,u(function(){a.media!==r&&(a.media=r)}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
 </head>
 <body>
     <!-- Main Navigation -->
@@ -100,9 +155,17 @@
             <div class="about-container">
                 <div class="about-image">
                     <picture>
-                        <source srcset="assets/images/avatar.avif" type="image/avif">
+                        <source srcset="assets/images/avatar-200w.avif 200w, assets/images/avatar.avif 400w" 
+                                sizes="(max-width: 768px) 200px, 400px" 
+                                type="image/avif">
                         <source srcset="assets/images/avatar.webp" type="image/webp">
-                        <img src="assets/images/avatar.jpg" alt="Diego Donoso Vera - Full Stack Developer" class="avatar" loading="lazy" width="400" height="400">
+                        <img src="assets/images/avatar.jpg" 
+                             alt="Diego Donoso Vera - Full Stack Developer" 
+                             class="avatar" 
+                             loading="lazy" 
+                             width="400" 
+                             height="400" 
+                             decoding="async">
                     </picture>
                 </div>
                 <div class="about-content">
@@ -111,7 +174,7 @@
                     <p class="about-description" data-i18n-html="about.description1">With over 3 years of professional experience, I specialize in creating modern, performant web applications using technologies like <strong>React</strong>, <strong>Node.js</strong>, and <strong>Angular</strong>. My journey has taken me from developing AI-powered platforms at <strong>Deliryum.AI</strong> to architecting enterprise-level solutions at INDRA.</p>
                     <p class="about-description" data-i18n-html="about.description2">I'm driven by clean code, user-centric design, and continuous learning. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
                     <div class="about-buttons">
-                        <a href="assets/cv/Diego_Donoso_CV.pdf" download class="btn-primary btn-icon">
+                        <a href="assets/cv/CV_Diego_Donoso_Vera.pdf" download class="btn-primary btn-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
@@ -170,11 +233,11 @@
                         <div class="role" data-i18n="experience.indra.role">Full Stack Engineer</div>
                         <div class="description">
                             <ul>
-                                <li data-i18n="experience.indra.li1">Developed and maintained enterprise platforms for ENEL, Codelco, and Chile's National Electrical Coordinator (CEN).</li>
-                                <li data-i18n="experience.indra.li2">Participated in critical energy management and industrial monitoring systems used in large-scale operational environments.</li>
-                                <li data-i18n="experience.indra.li3">Led database migration processes from Oracle to PostgreSQL and modernized legacy APIs using ASP.NET Core 9.</li>
-                                <li data-i18n="experience.indra.li4">Implemented Clean Architecture, CQRS, Mediator pattern, and internal automation solutions to improve maintainability and scalability.</li>
-                                <li data-i18n="experience.indra.li5">Collaborated in full-stack development using Angular and PHP for enterprise-level applications.</li>
+                                <li data-i18n="experience.indra.li1">Built and maintained enterprise platforms for ENEL, Codelco, and Chile's National Electrical Coordinator (CEN).</li>
+                                <li data-i18n="experience.indra.li2">Engineered critical energy management and industrial monitoring systems for large-scale operations.</li>
+                                <li data-i18n="experience.indra.li3">Migrated databases from Oracle to PostgreSQL and modernized legacy APIs with ASP.NET Core 9.</li>
+                                <li data-i18n="experience.indra.li4">Architected solutions using Clean Architecture, CQRS, and Mediator patterns to enhance scalability and maintainability.</li>
+                                <li data-i18n="experience.indra.li5">Developed full-stack applications with Angular and PHP for enterprise clients.</li>
                             </ul>
                         </div>
                         <div class="stack">
@@ -224,13 +287,12 @@
                         <div class="role" data-i18n="experience.deliryum.role">Software Developer</div>
                         <div class="description">
                             <ul>
-                                <li data-i18n="experience.deliryum.li1">Developed AI-powered video analytics solutions using YOLO and PyTorch.</li>
-                                <li data-i18n="experience.deliryum.li2">Built scalable APIs with Flask, FastAPI, and Django.</li>
-                                <li data-i18n="experience.deliryum.li3">Created modern frontend applications with React JS consuming REST APIs.</li>
-                                <li data-i18n="experience.deliryum.li4">Participated in technical leadership and development team coordination.</li>
-                                <li data-i18n="experience.deliryum.li5">Designed web interfaces and developed REST APIs.</li>
-                                <li data-i18n="experience.deliryum.li6">Integrated databases and automated internal processes.</li>
-                                <li data-i18n="experience.deliryum.li7">Contributed to computer vision and image analysis projects.</li>
+                                <li data-i18n="experience.deliryum.li1">Built AI-powered video analytics solutions using YOLO and PyTorch for object detection and tracking.</li>
+                                <li data-i18n="experience.deliryum.li2">Developed scalable REST APIs with Flask, FastAPI, and Django for production environments.</li>
+                                <li data-i18n="experience.deliryum.li3">Created modern React applications consuming REST APIs with real-time data visualization.</li>
+                                <li data-i18n="experience.deliryum.li4">Led technical coordination and mentored development team members.</li>
+                                <li data-i18n="experience.deliryum.li5">Automated internal workflows and integrated database systems for improved efficiency.</li>
+                                <li data-i18n="experience.deliryum.li6">Implemented computer vision algorithms for image analysis and pattern recognition.</li>
                             </ul>
                         </div>
                         <div class="stack">
@@ -629,7 +691,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- JavaScript - Deferred for better performance -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script defer src="js/script.js"></script>
 </body>
 </html>

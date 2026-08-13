@@ -32,22 +32,21 @@
     "indra": {
       "role": "Full Stack Engineer",
       "dates": "Ago 2023 — Presente",
-      "li1": "Desarrollé y mantuve plataformas empresariales para ENEL, Codelco y el Coordinador Eléctrico Nacional de Chile (CEN).",
-      "li2": "Participé en sistemas críticos de gestión energética y monitoreo industrial utilizados en entornos operativos a gran escala.",
-      "li3": "Lideré procesos de migración de bases de datos desde Oracle a PostgreSQL y modernicé APIs legacy usando ASP.NET Core 9.",
-      "li4": "Implementé Clean Architecture, CQRS, patrón Mediator y soluciones de automatización interna para mejorar la mantenibilidad y escalabilidad.",
-      "li5": "Colaboré en desarrollo full-stack usando Angular y PHP para aplicaciones empresariales."
+      "li1": "Construí y mantuve plataformas empresariales para ENEL, Codelco y el Coordinador Eléctrico Nacional de Chile (CEN).",
+      "li2": "Desarrollé sistemas críticos de gestión energética y monitoreo industrial para operaciones a gran escala.",
+      "li3": "Migré bases de datos de Oracle a PostgreSQL y modernicé APIs legacy con ASP.NET Core 9.",
+      "li4": "Arquitecté soluciones usando Clean Architecture, CQRS y patrones Mediator para mejorar escalabilidad y mantenibilidad.",
+      "li5": "Desarrollé aplicaciones full-stack con Angular y PHP para clientes empresariales."
     },
     "deliryum": {
       "role": "Desarrollador de Software",
       "dates": "Oct 2021 — Ago 2023",
-      "li1": "Desarrollé soluciones de analítica de video basadas en IA usando YOLO y PyTorch.",
-      "li2": "Construí APIs escalables con Flask, FastAPI y Django.",
-      "li3": "Creé aplicaciones frontend modernas con React JS consumiendo APIs REST.",
-      "li4": "Participé en liderazgo técnico y coordinación de equipos de desarrollo.",
-      "li5": "Diseñé interfaces web y desarrollé APIs REST.",
-      "li6": "Integré bases de datos y automatizé procesos internos.",
-      "li7": "Contribuí en proyectos de visión por computador y análisis de imágenes."
+      "li1": "Construí soluciones de analítica de video basadas en IA usando YOLO y PyTorch para detección y seguimiento de objetos.",
+      "li2": "Desarrollé APIs REST escalables con Flask, FastAPI y Django para entornos de producción.",
+      "li3": "Creé aplicaciones React modernas consumiendo APIs REST con visualización de datos en tiempo real.",
+      "li4": "Lideré coordinación técnica y mentoría de miembros del equipo de desarrollo.",
+      "li5": "Automaticé flujos de trabajo internos e integré sistemas de bases de datos para mayor eficiencia.",
+      "li6": "Implementé algoritmos de visión por computador para análisis de imágenes y reconocimiento de patrones."
     }
   }
 
