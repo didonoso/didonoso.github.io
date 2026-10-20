@@ -24,29 +24,31 @@
     "title": "About Me",
     "intro": "Hi! I'm Diego, a passionate <strong>Senior Full Stack Developer</strong> currently working at <strong>INDRA</strong>, where I design and build scalable web solutions that solve real-world problems.",
     "description1": "With over 3 years of professional experience, I specialize in creating modern, performant web applications using technologies like <strong>React</strong>, <strong>Node.js</strong>, and <strong>Angular</strong>. My journey has taken me from developing AI-powered platforms at <strong>Deliryum.AI</strong> to architecting enterprise-level solutions at INDRA.",
-    "description2": "I'm driven by clean code, user-centric design, and continuous learning. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
-  }
+    "description2": "I'm driven by clean code, user-centric design, and continuous learning. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or     sharing knowledge with the developer community.",
+        "download_cv": "Download CV",
+        "github_profile": "GitHub Profile"
+      }
   ,
   "experience": {
     "title": "Experience",
     "indra": {
       "role": "Full Stack Engineer",
       "dates": "Aug 2023 — Present",
-      "li1": "Built and maintained enterprise platforms for ENEL, Codelco, and Chile's National Electrical Coordinator (CEN).",
-      "li2": "Engineered critical energy management and industrial monitoring systems for large-scale operations.",
-      "li3": "Migrated databases from Oracle to PostgreSQL and modernized legacy APIs with ASP.NET Core 9.",
-      "li4": "Architected solutions using Clean Architecture, CQRS, and Mediator patterns to enhance scalability and maintainability.",
-      "li5": "Developed full-stack applications with Angular and PHP for enterprise clients."
+      "li1": "CEN (Coordinador Eléctrico Nacional): evolution, maintenance and support of critical systems (Sistema de Correspondencia, Neomante, Operación Real, Project Management Platform, Estados Operativos, REUC) using Python, Django, Flask and FastAPI.",
+      "li2": "CEN: developed APIs, forms, console processes and email notifications; worked with MongoDB, PostgreSQL and MySQL; handled production deployments, server configuration and Nginx; resolved corrective tickets via ServiceTonic.",
+      "li3": "CODELCO: developed the Inspection and Testing Plan (PIE) module in PHP 7.4, including forms, document tracking and approval/rejection, progress control, process closures and exports to multiple formats.",
+      "li4": "ENEL – Emergency Management Platform (PGE): developed and evolved modules with .NET 9 / ASP.NET Core 9, Angular 15 and Oracle.",
+      "li5": "ENEL – PIP project: migrated a database from Oracle to PostgreSQL and developed, modified and migrated endpoints used by enel.cl.",
+      "li6": "ENEL: built .NET 8 console processes that extract data from PostgreSQL and send email notifications; deployed and maintained apps on Windows servers; fixed vulnerabilities reported by cybersecurity teams."
     },
     "deliryum": {
       "role": "Software Developer",
       "dates": "Oct 2021 — Aug 2023",
-      "li1": "Built AI-powered video analytics solutions using YOLO and PyTorch for object detection and tracking.",
-      "li2": "Developed scalable REST APIs with Flask, FastAPI, and Django for production environments.",
-      "li3": "Created modern React applications consuming REST APIs with real-time data visualization.",
-      "li4": "Led technical coordination and mentored development team members.",
-      "li5": "Automated internal workflows and integrated database systems for improved efficiency.",
-      "li6": "Implemented computer vision algorithms for image analysis and pattern recognition."
+      "li1": "Developed Artificial Intelligence and computer vision solutions using YOLO and PyTorch.",
+      "li2": "Designed and built REST APIs with Python, Flask, FastAPI and Django.",
+      "li3": "Built web applications using React.js, JavaScript, HTML, CSS and Bootstrap.",
+      "li4": "Implemented and managed solutions on Microsoft Azure.",
+      "li5": "Sourced, prepared and managed image datasets for computer vision, including image selection, classification and labeling for model training."
     }
   },
   "skills": {
