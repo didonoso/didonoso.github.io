@@ -24,29 +24,31 @@
     "title": "Sobre\u00A0mí",
     "intro": "¡Hola! Soy Diego, un apasionado <strong>Desarrollador Full Stack Senior</strong> actualmente trabajando en <strong>INDRA</strong>, donde diseño y construyo soluciones web escalables que resuelven problemas del mundo real.",
     "description1": "Con más de 3 años de experiencia profesional, me especializo en crear aplicaciones web modernas y de alto rendimiento utilizando tecnologías como <strong>React</strong>, <strong>Node.js</strong> y <strong>Angular</strong>. Mi trayectoria me ha llevado desde el desarrollo de plataformas con IA en <strong>Deliryum.AI</strong> hasta la arquitectura de soluciones empresariales en INDRA.",
-    "description2": "Me motiva el código limpio, el diseño centrado en el usuario y el aprendizaje continuo. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías, contribuyendo a proyectos de código abierto o compartiendo conocimiento con la comunidad de desarrolladores."
-  }
+    "description2": "Me motiva el código limpio, el diseño centrado en el usuario y el aprendizaje continuo. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías, contribuyendo a proyectos de código abierto o compartiendo conocimiento con la     comunidad de desarrolladores.",
+        "download_cv": "Descargar CV",
+        "github_profile": "Perfil de GitHub"
+      }
   ,
   "experience": {
     "title": "Experiencia",
     "indra": {
       "role": "Full Stack Engineer",
       "dates": "Ago 2023 — Presente",
-      "li1": "Construí y mantuve plataformas empresariales para ENEL, Codelco y el Coordinador Eléctrico Nacional de Chile (CEN).",
-      "li2": "Desarrollé sistemas críticos de gestión energética y monitoreo industrial para operaciones a gran escala.",
-      "li3": "Migré bases de datos de Oracle a PostgreSQL y modernicé APIs legacy con ASP.NET Core 9.",
-      "li4": "Arquitecté soluciones usando Clean Architecture, CQRS y patrones Mediator para mejorar escalabilidad y mantenibilidad.",
-      "li5": "Desarrollé aplicaciones full-stack con Angular y PHP para clientes empresariales."
+      "li1": "CEN (Coordinador Eléctrico Nacional): evolución, mantenimiento y soporte de sistemas críticos (Sistema de Correspondencia, Neomante, Operación Real, Plataforma de Gestión de Proyectos, Estados Operativos, REUC) con Python, Django, Flask y FastAPI.",
+      "li2": "CEN: desarrollo de APIs, formularios, procesos de consola y notificaciones por correo; trabajo con MongoDB, PostgreSQL y MySQL; despliegues productivos, configuración de servidores y Nginx; resolución de tickets correctivos en ServiceTonic.",
+      "li3": "CODELCO: desarrollo del módulo Plan de Inspección y Ensayo (PIE) en PHP 7.4, con formularios, gestión y seguimiento de documentos, aprobación y rechazo, control de avances, cierres de procesos y exportación a distintos formatos.",
+      "li4": "ENEL – Plataforma de Gestión de Emergencias (PGE): desarrollo y evolución de módulos con .NET 9 / ASP.NET Core 9, Angular 15 y Oracle.",
+      "li5": "ENEL – Proyecto PIP: migración de base de datos de Oracle a PostgreSQL y desarrollo, modificación y migración de endpoints usados por enel.cl.",
+      "li6": "ENEL: procesos de consola en .NET 8 que extraen datos de PostgreSQL y notifican por correo; despliegues y mantenimiento en servidores Windows; corrección de vulnerabilidades reportadas por ciberseguridad."
     },
     "deliryum": {
       "role": "Desarrollador de Software",
       "dates": "Oct 2021 — Ago 2023",
-      "li1": "Construí soluciones de analítica de video basadas en IA usando YOLO y PyTorch para detección y seguimiento de objetos.",
-      "li2": "Desarrollé APIs REST escalables con Flask, FastAPI y Django para entornos de producción.",
-      "li3": "Creé aplicaciones React modernas consumiendo APIs REST con visualización de datos en tiempo real.",
-      "li4": "Lideré coordinación técnica y mentoría de miembros del equipo de desarrollo.",
-      "li5": "Automaticé flujos de trabajo internos e integré sistemas de bases de datos para mayor eficiencia.",
-      "li6": "Implementé algoritmos de visión por computador para análisis de imágenes y reconocimiento de patrones."
+      "li1": "Desarrollo de soluciones de Inteligencia Artificial y visión por computador con YOLO y PyTorch.",
+      "li2": "Diseño y desarrollo de APIs REST con Python, Flask, FastAPI y Django.",
+      "li3": "Desarrollo de aplicaciones web con React.js, JavaScript, HTML, CSS y Bootstrap.",
+      "li4": "Implementación y administración de soluciones en Microsoft Azure.",
+      "li5": "Obtención, preparación y gestión de datasets de imágenes para visión por computador, incluyendo selección, clasificación y etiquetado de imágenes para entrenar modelos."
     }
   }
 
